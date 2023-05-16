@@ -12,6 +12,7 @@
 		8C1460452A0E9B0F005FAED3 /* MovieReviewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1460442A0E9B0F005FAED3 /* MovieReviewListView.swift */; };
 		8C14604A2A0E9B11005FAED3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1460492A0E9B11005FAED3 /* Assets.xcassets */; };
 		8C14604D2A0E9B11005FAED3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C14604B2A0E9B11005FAED3 /* LaunchScreen.storyboard */; };
+		8C1460572A0E9C87005FAED3 /* MovieReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1460562A0E9C86005FAED3 /* MovieReviewCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		8C1460492A0E9B11005FAED3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C14604C2A0E9B11005FAED3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C14604E2A0E9B11005FAED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C1460562A0E9C86005FAED3 /* MovieReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				8C1460402A0E9B0F005FAED3 /* AppDelegate.swift */,
 				8C1460422A0E9B0F005FAED3 /* SceneDelegate.swift */,
 				8C1460442A0E9B0F005FAED3 /* MovieReviewListView.swift */,
+				8C1460562A0E9C86005FAED3 /* MovieReviewCollectionViewCell.swift */,
 				8C1460492A0E9B11005FAED3 /* Assets.xcassets */,
 				8C14604B2A0E9B11005FAED3 /* LaunchScreen.storyboard */,
 				8C14604E2A0E9B11005FAED3 /* Info.plist */,
@@ -137,6 +140,7 @@
 				8C1460452A0E9B0F005FAED3 /* MovieReviewListView.swift in Sources */,
 				8C1460412A0E9B0F005FAED3 /* AppDelegate.swift in Sources */,
 				8C1460432A0E9B0F005FAED3 /* SceneDelegate.swift in Sources */,
+				8C1460572A0E9C87005FAED3 /* MovieReviewCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
