@@ -13,7 +13,7 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
     
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "heart")
+        imageView.image = UIImage(named: "poster")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -48,7 +48,11 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .systemMint
+        
+        contentView.backgroundColor = .systemGray6
+        
+        layer.cornerRadius = 15.0
+        layer.masksToBounds = true
         
         configureComponent()
     }
@@ -68,8 +72,8 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             posterImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             posterImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            posterImageView.heightAnchor.constraint(equalToConstant: 120),
-            posterImageView.widthAnchor.constraint(equalToConstant: 80),
+            posterImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+            posterImageView.widthAnchor.constraint(equalToConstant: 100),
             
             movieNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             movieNameLabel.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 20),

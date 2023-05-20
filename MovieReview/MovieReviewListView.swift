@@ -26,7 +26,7 @@ class MovieReviewListView: UIViewController {
         configureCollectionView()
     }
 
-    func configureCollectionView() {
+    func configureCollectionView() {        
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -34,10 +34,10 @@ class MovieReviewListView: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
         collectionView.register(MovieReviewCollectionViewCell.self, forCellWithReuseIdentifier: MovieReviewCollectionViewCell.identifier)
@@ -53,7 +53,6 @@ extension MovieReviewListView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieReviewCollectionViewCell.identifier, for: indexPath) as! MovieReviewCollectionViewCell
-        cell.backgroundColor = .yellow
         return cell
     }
     
@@ -67,7 +66,7 @@ extension MovieReviewListView: UICollectionViewDelegate {
 extension MovieReviewListView: UICollectionViewDelegateFlowLayout {
     //Cell의 크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.width / 2)
+        return CGSize(width: view.frame.width - 20, height: view.frame.width / 2)
     }
     
     //Cell간의 간격
