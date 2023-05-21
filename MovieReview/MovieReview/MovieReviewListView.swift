@@ -59,7 +59,10 @@ extension MovieReviewListView: UICollectionViewDataSource {
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let nextVC = MovieReviewDetailView()
+        self.show(nextVC, sender: self)
+    }
 }
 
 extension MovieReviewListView: UICollectionViewDelegate {
