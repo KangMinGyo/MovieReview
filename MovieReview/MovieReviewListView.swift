@@ -22,10 +22,13 @@ class MovieReviewListView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        title = "Review"
         
         configureCollectionView()
     }
 
+    //MARK: - Configure
+    
     func configureCollectionView() {        
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -66,7 +69,7 @@ extension MovieReviewListView: UICollectionViewDelegate {
 extension MovieReviewListView: UICollectionViewDelegateFlowLayout {
     //Cell의 크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 20, height: view.frame.width / 2)
+        return CGSize(width: view.frame.width - 20, height: view.frame.width / 2.5)
     }
     
     //Cell간의 간격

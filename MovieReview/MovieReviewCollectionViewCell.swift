@@ -11,6 +11,8 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "ReviewCell"
     
+    //MARK: - Properties
+    
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "poster")
@@ -28,6 +30,7 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
     private let directorNameLabel: UILabel = {
         let label = UILabel()
         label.text = "영화 감독"
+        label.font = .systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -35,6 +38,7 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
     private let movieInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "미국 | 미스터리, 범죄 | 2000"
+        label.font = .systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -42,23 +46,41 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.text = "작성일: 23.01.19 오후 5:23"
+        label.textColor = .systemGray2
+        label.font = .systemFont(ofSize: 13)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+    //MARK: - Lifecycle
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        contentView.backgroundColor = .systemGray6
-        
-        layer.cornerRadius = 15.0
-        layer.masksToBounds = true
+        contentView.backgroundColor = .white
+
+        configureShadow()
+        configureCornerRadius()
         
         configureComponent()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - Configure
+    private func configureShadow() {
+        layer.shadowRadius = 3
+        layer.shadowOffset = CGSize(width: 1, height: 1)
+        layer.shadowOpacity = 0.25
+        layer.shadowColor = UIColor.black.cgColor
+        layer.masksToBounds = false
+    }
+    
+    private func configureCornerRadius() {
+        contentView.layer.cornerRadius = 15
+        contentView.layer.masksToBounds = true
     }
     
     func configureComponent() {
@@ -73,7 +95,7 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
             posterImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             posterImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             posterImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
-            posterImageView.widthAnchor.constraint(equalToConstant: 100),
+            posterImageView.widthAnchor.constraint(equalToConstant: 75),
             
             movieNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             movieNameLabel.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 20),
