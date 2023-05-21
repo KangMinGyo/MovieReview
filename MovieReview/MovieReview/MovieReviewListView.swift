@@ -11,10 +11,19 @@ class MovieReviewListView: UIViewController {
     
     //MARK: - Properties
     
-    let collectionView: UICollectionView = {
+    private let collectionView: UICollectionView = {
         let flowlayout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: flowlayout)
         return cv
+    }()
+
+    lazy var movieSearchButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "pencil"),
+                                     style: .plain,
+                                     target: self,
+                                     action: #selector(movieSearchButtonPressed))
+        button.tintColor = .gray
+        return button
     }()
     
     //MARK: - Lifecycle
@@ -22,7 +31,8 @@ class MovieReviewListView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        title = "Review"
+        title = "리뷰 목록"
+        navigationItem.rightBarButtonItem = movieSearchButton
         
         configureCollectionView()
     }
@@ -44,6 +54,11 @@ class MovieReviewListView: UIViewController {
         ])
         
         collectionView.register(MovieReviewCollectionViewCell.self, forCellWithReuseIdentifier: MovieReviewCollectionViewCell.identifier)
+    }
+    
+    @objc func movieSearchButtonPressed() {
+        let nextVC = MovieSearchView()
+        self.show(nextVC, sender: self)
     }
 
 }
