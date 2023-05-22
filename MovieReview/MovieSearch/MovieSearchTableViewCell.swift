@@ -23,7 +23,7 @@ class MovieSearchTableViewCell: UITableViewCell {
     let directorLabel: UILabel = {
         let label = UILabel()
         label.text = "영화감독"
-        label.font = .systemFont(ofSize: 15)
+        label.textColor = .systemGray2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -31,7 +31,7 @@ class MovieSearchTableViewCell: UITableViewCell {
     let movieInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "미국 | 미스터리, 범죄 | 2000"
-        label.font = .systemFont(ofSize: 15)
+        label.textColor = .systemGray2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

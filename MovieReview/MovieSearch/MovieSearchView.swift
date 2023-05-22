@@ -84,14 +84,14 @@ extension MovieSearchView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let nextVC = ReviewWriteViewController()
-//        self.show(nextVC, sender: self)
+        let nextVC = ReviewWriteView()
+        self.show(nextVC, sender: self)
     }
 }
 
 extension MovieSearchView: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let movieName = searchBar.text
+//        let movieName = searchBar.text
         searchBar.resignFirstResponder()
     }
 }
