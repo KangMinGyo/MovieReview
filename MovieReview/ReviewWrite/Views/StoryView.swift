@@ -9,15 +9,15 @@ import UIKit
 
 class StoryView: UIView {
 
-    //    var isActivated : Bool = false {
-    //        didSet {
-    //            if isActivated {
-    //
-    //            } else {
-    //
-    //            }
-    //        }
-    //    }
+    var isActivated : Bool = false {
+          didSet {
+              if isActivated {
+                  storyLabel.textColor = UIColor(named: "mrRed")
+              } else {
+                  storyLabel.textColor = .black
+              }
+          }
+      }
     
     let imageSize = CGSize(width: 50, height: 50)
     
@@ -38,7 +38,7 @@ class StoryView: UIView {
     }()
     
     @objc func storyButtonAction() {
-        print("story Button tapped")
+        isActivated.toggle()
     }
     
     

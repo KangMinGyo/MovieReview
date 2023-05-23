@@ -20,25 +20,43 @@ class LikeHateSelectView: UIView {
 
     lazy var likeButton: UIButton = {
         let button = UIButton()
+        button.tag = 0
         button.backgroundColor = .systemGray6
         button.setTitleColor(.black, for: .normal)
         button.setTitle("❤️ 좋았어요", for: .normal)
         button.layer.cornerRadius = 15
-        button.addTarget(self, action: #selector(likeButtonAction), for: .touchUpInside)
+        button.layer.borderColor = UIColor.gray.cgColor
+        button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(LikeHateButtonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     lazy var hateButton: UIButton = {
         let button = UIButton()
+        button.tag = 1
         button.backgroundColor = .systemGray6
         button.setTitleColor(.black, for: .normal)
         button.setTitle("💔 별로였어요", for: .normal)
         button.layer.cornerRadius = 15
-        button.addTarget(self, action: #selector(hateButtonAction), for: .touchUpInside)
+        button.layer.borderColor = UIColor.gray.cgColor
+        button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(LikeHateButtonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    @objc func LikeHateButtonAction(sender: UIButton) {
+        if sender.tag == 0 {
+            likeButton.layer.borderColor = UIColor(named: "mrRed")?.cgColor
+            hateButton.layer.borderColor = UIColor.gray.cgColor
+            print(0)
+        } else {
+            likeButton.layer.borderColor = UIColor.gray.cgColor
+            hateButton.layer.borderColor = UIColor(named: "mrRed")?.cgColor
+            print(1)
+        }
+    }
 
     private let likeHateButtonStackView: UIStackView = {
         let stackView = UIStackView()
@@ -83,14 +101,6 @@ class LikeHateSelectView: UIView {
             likeHateButtonStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             likeHateButtonStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
-    }
-    
-    @objc func likeButtonAction() {
-        print("Like Button tapped")
-    }
-    
-    @objc func hateButtonAction() {
-        print("hate Button tapped")
     }
     
     func configureStackView() {

@@ -9,15 +9,15 @@ import UIKit
 
 class ActingView: UIView {
     
-    //    var isActivated : Bool = false {
-    //        didSet {
-    //            if isActivated {
-    //
-    //            } else {
-    //
-    //            }
-    //        }
-    //    }
+    var isActivated : Bool = false {
+          didSet {
+              if isActivated {
+                  actingLabel.textColor = UIColor(named: "mrRed")
+              } else {
+                  actingLabel.textColor = .black
+              }
+          }
+      }
     
     let imageSize = CGSize(width: 50, height: 50)
     
@@ -37,8 +37,8 @@ class ActingView: UIView {
         return label
     }()
     
-    @objc func actingButtonAction() {
-        print("acting Button tapped")
+    @objc func actingButtonAction(sender: UIButton) {
+        isActivated.toggle()
     }
     
     

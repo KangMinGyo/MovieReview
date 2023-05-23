@@ -27,21 +27,6 @@ class ReviewWritingView: UIView {
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
-    
-    lazy var registerButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(named: "mrRed")
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("등록", for: .normal)
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(registerButtonAction), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    @objc func registerButtonAction() {
-        print("registerButton Button tapped")
-    }
 
     //MARK: - Lifecycle
     
@@ -61,7 +46,6 @@ class ReviewWritingView: UIView {
     func addSubView() {
         self.addSubview(myReviewLabel)
         self.addSubview(reviewTextView)
-        self.addSubview(registerButton)
 
         configureComponent()
     }
@@ -75,12 +59,13 @@ class ReviewWritingView: UIView {
             reviewTextView.topAnchor.constraint(equalTo: myReviewLabel.bottomAnchor, constant: 10),
             reviewTextView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             reviewTextView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            reviewTextView.heightAnchor.constraint(equalToConstant: 200),
-            
-            registerButton.topAnchor.constraint(equalTo: reviewTextView.bottomAnchor, constant: 20),
-            registerButton.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            registerButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            registerButton.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            reviewTextView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            reviewTextView.heightAnchor.constraint(equalToConstant: 200)
+//
+//            registerButton.topAnchor.constraint(equalTo: reviewTextView.bottomAnchor, constant: 20),
+//            registerButton.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+//            registerButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+//            registerButton.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 

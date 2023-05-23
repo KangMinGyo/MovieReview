@@ -9,16 +9,15 @@ import UIKit
 
 class VideoView: UIView {
 
-
-    //    var isActivated : Bool = false {
-    //        didSet {
-    //            if isActivated {
-    //
-    //            } else {
-    //
-    //            }
-    //        }
-    //    }
+    var isActivated : Bool = false {
+          didSet {
+              if isActivated {
+                  vedioLabel.textColor = UIColor(named: "mrRed")
+              } else {
+                  vedioLabel.textColor = .black
+              }
+          }
+      }
     
     let imageSize = CGSize(width: 50, height: 50)
     
@@ -39,7 +38,7 @@ class VideoView: UIView {
     }()
     
     @objc func videoButtonAction() {
-        print("video Button tapped")
+        isActivated.toggle()
     }
     
     

@@ -35,6 +35,21 @@ class ReviewWriteViewController: UIViewController {
         return view
     }()
     
+    lazy var registerButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(named: "mrRed")
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle("등록", for: .normal)
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(registerButtonAction), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+    @objc func registerButtonAction() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     let totalView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -62,6 +77,7 @@ class ReviewWriteViewController: UIViewController {
         totalView.addSubview(likeHateSelectView)
         totalView.addSubview(goodPointSelectView)
         totalView.addSubview(reviewWritingView)
+        totalView.addSubview(registerButton)
         
         configureComponent()
     }
@@ -88,7 +104,11 @@ class ReviewWriteViewController: UIViewController {
             reviewWritingView.topAnchor.constraint(equalTo: goodPointSelectView.bottomAnchor, constant: 40),
             reviewWritingView.leadingAnchor.constraint(equalTo: totalView.leadingAnchor),
             reviewWritingView.trailingAnchor.constraint(equalTo: totalView.trailingAnchor),
-            reviewWritingView.bottomAnchor.constraint(equalTo: totalView.bottomAnchor, constant: -300),
+            
+            registerButton.topAnchor.constraint(equalTo: reviewWritingView.bottomAnchor, constant: 20),
+            registerButton.leadingAnchor.constraint(equalTo: totalView.leadingAnchor),
+            registerButton.trailingAnchor.constraint(equalTo: totalView.trailingAnchor),
+            registerButton.bottomAnchor.constraint(equalTo: totalView.bottomAnchor, constant: -300),
         ])
     }
 }

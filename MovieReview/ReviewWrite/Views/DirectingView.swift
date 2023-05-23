@@ -9,15 +9,15 @@ import UIKit
 
 class DirectingView: UIView {
     
-    //    var isActivated : Bool = false {
-    //        didSet {
-    //            if isActivated {
-    //
-    //            } else {
-    //
-    //            }
-    //        }
-    //    }
+    var isActivated : Bool = false {
+          didSet {
+              if isActivated {
+                  directorLabel.textColor = UIColor(named: "mrRed")
+              } else {
+                  directorLabel.textColor = .black
+              }
+          }
+      }
     
     let imageSize = CGSize(width: 50, height: 50)
     
@@ -38,7 +38,7 @@ class DirectingView: UIView {
     }()
     
     @objc func directorButtonAction() {
-        print("director Button tapped")
+        isActivated.toggle()
     }
     
     

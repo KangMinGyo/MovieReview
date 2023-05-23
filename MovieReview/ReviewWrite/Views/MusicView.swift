@@ -9,15 +9,15 @@ import UIKit
 
 class MusicView: UIView {
 
-    //    var isActivated : Bool = false {
-    //        didSet {
-    //            if isActivated {
-    //
-    //            } else {
-    //
-    //            }
-    //        }
-    //    }
+    var isActivated : Bool = false {
+          didSet {
+              if isActivated {
+                  musicLabel.textColor = UIColor(named: "mrRed")
+              } else {
+                  musicLabel.textColor = .black
+              }
+          }
+      }
     
     let imageSize = CGSize(width: 50, height: 50)
     
@@ -38,7 +38,7 @@ class MusicView: UIView {
     }()
     
     @objc func musicButtonAction() {
-        print("music Button tapped")
+        isActivated.toggle()
     }
     
     
