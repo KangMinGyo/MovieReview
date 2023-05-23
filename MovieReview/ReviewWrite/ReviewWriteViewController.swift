@@ -40,23 +40,6 @@ class ReviewWriteViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-//
-//    private let myReviewLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "나의 관람평"
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        return label
-//    }()
-//
-//    private let reviewTextView: UITextView = {
-//        let textView = UITextView()
-//        textView.text = "관람평을 작성해주세요."
-//        textView.font = .systemFont(ofSize: 15)
-//        textView.backgroundColor = .systemGray6
-//        textView.isScrollEnabled = false
-//        textView.translatesAutoresizingMaskIntoConstraints = false
-//        return textView
-//    }()
     
     //MARK: - Lifecycle
     
@@ -79,8 +62,6 @@ class ReviewWriteViewController: UIViewController {
         totalView.addSubview(likeHateSelectView)
         totalView.addSubview(goodPointSelectView)
         totalView.addSubview(reviewWritingView)
-//        totalView.addSubview(myReviewLabel)
-//        totalView.addSubview(reviewTextView)
         
         configureComponent()
     }
@@ -108,16 +89,6 @@ class ReviewWriteViewController: UIViewController {
             reviewWritingView.leadingAnchor.constraint(equalTo: totalView.leadingAnchor),
             reviewWritingView.trailingAnchor.constraint(equalTo: totalView.trailingAnchor),
             reviewWritingView.bottomAnchor.constraint(equalTo: totalView.bottomAnchor, constant: -300),
-            
-//            myReviewLabel.topAnchor.constraint(equalTo: goodPointSelectView.bottomAnchor, constant: 40),
-//            myReviewLabel.leadingAnchor.constraint(equalTo: totalView.leadingAnchor),
-//            myReviewLabel.trailingAnchor.constraint(equalTo: totalView.trailingAnchor),
-//
-//            reviewTextView.topAnchor.constraint(equalTo: myReviewLabel.bottomAnchor, constant: 10),
-//            reviewTextView.leadingAnchor.constraint(equalTo: totalView.leadingAnchor),
-//            reviewTextView.trailingAnchor.constraint(equalTo: totalView.trailingAnchor),
-//            reviewTextView.bottomAnchor.constraint(equalTo: totalView.bottomAnchor, constant: -300),
-//            reviewTextView.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
 }
