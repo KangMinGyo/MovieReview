@@ -24,7 +24,7 @@ class MovieSearchView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
         title = "영화 검색"
         view.backgroundColor = .systemBackground
         
@@ -59,17 +59,6 @@ class MovieSearchView: UIViewController {
             movieSearchTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension MovieSearchView: UITableViewDelegate, UITableViewDataSource {
@@ -91,7 +80,6 @@ extension MovieSearchView: UITableViewDelegate, UITableViewDataSource {
 
 extension MovieSearchView: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        let movieName = searchBar.text
-        searchBar.resignFirstResponder()
+
     }
 }

@@ -58,11 +58,10 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         contentView.backgroundColor = .white
-
+        
+        addSubView()
         configureShadow()
         configureCornerRadius()
-        
-        configureComponent()
     }
     
     required init?(coder: NSCoder) {
@@ -70,27 +69,18 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
     }
     
     //MARK: - Configure
-    private func configureShadow() {
-        layer.shadowRadius = 3
-        layer.shadowOffset = CGSize(width: 1, height: 1)
-        layer.shadowOpacity = 0.25
-        layer.shadowColor = UIColor.black.cgColor
-        layer.masksToBounds = false
-    }
     
-    private func configureCornerRadius() {
-        contentView.layer.cornerRadius = 15
-        contentView.layer.masksToBounds = true
-    }
-    
-    func configureComponent() {
-        
+    func addSubView() {
         addSubview(posterImageView)
         addSubview(movieNameLabel)
         addSubview(directorNameLabel)
         addSubview(movieInfoLabel)
         addSubview(dateLabel)
         
+        configureComponent()
+    }
+    
+    func configureComponent() {
         NSLayoutConstraint.activate([
             posterImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             posterImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
@@ -113,5 +103,18 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
             dateLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
             dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
         ])
+    }
+    
+    private func configureShadow() {
+        layer.shadowRadius = 3
+        layer.shadowOffset = CGSize(width: 1, height: 1)
+        layer.shadowOpacity = 0.25
+        layer.shadowColor = UIColor.black.cgColor
+        layer.masksToBounds = false
+    }
+    
+    private func configureCornerRadius() {
+        contentView.layer.cornerRadius = 15
+        contentView.layer.masksToBounds = true
     }
 }
