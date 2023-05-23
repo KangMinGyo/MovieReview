@@ -71,7 +71,8 @@ class VideoView: UIView {
             videoButton.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             vedioLabel.topAnchor.constraint(equalTo: videoButton.bottomAnchor, constant: 5),
-            vedioLabel.centerXAnchor.constraint(equalTo: videoButton.centerXAnchor)
+            vedioLabel.centerXAnchor.constraint(equalTo: videoButton.centerXAnchor),
+            vedioLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }

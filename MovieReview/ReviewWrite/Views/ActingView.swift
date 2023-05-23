@@ -70,7 +70,8 @@ class ActingView: UIView {
             actingButton.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             actingLabel.topAnchor.constraint(equalTo: actingButton.bottomAnchor, constant: 5),
-            actingLabel.centerXAnchor.constraint(equalTo: actingButton.centerXAnchor)
+            actingLabel.centerXAnchor.constraint(equalTo: actingButton.centerXAnchor),
+            actingLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }

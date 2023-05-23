@@ -56,7 +56,7 @@ class GoodPointSelectView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    
+
     //MARK: - Lifecycle
     
     override init(frame: CGRect) {
@@ -74,19 +74,21 @@ class GoodPointSelectView: UIView {
     func addSubView() {
         self.addSubview(whatLabel)
         self.addSubview(buttonStackView)
+        
         configureComponent()
         configureStackView()
     }
     
     func configureComponent() {
         NSLayoutConstraint.activate([
-            whatLabel.topAnchor.constraint(equalTo: self.topAnchor),
-            whatLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            whatLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            whatLabel.topAnchor.constraint(equalTo: topAnchor),
+            whatLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            whatLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             buttonStackView.topAnchor.constraint(equalTo: whatLabel.bottomAnchor, constant: 10),
-            buttonStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            buttonStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            buttonStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            buttonStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     

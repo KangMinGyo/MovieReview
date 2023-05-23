@@ -84,7 +84,7 @@ extension MovieSearchView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nextVC = ReviewWriteView()
+        let nextVC = ReviewWriteViewController()
         self.show(nextVC, sender: self)
     }
 }

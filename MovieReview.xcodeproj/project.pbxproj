@@ -16,7 +16,7 @@
 		8C14605B2A19EF27005FAED3 /* MovieReviewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14605A2A19EF27005FAED3 /* MovieReviewDetailView.swift */; };
 		8C14605E2A1A13C1005FAED3 /* MovieSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14605D2A1A13C1005FAED3 /* MovieSearchView.swift */; };
 		8C1460602A1A4516005FAED3 /* MovieSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14605F2A1A4516005FAED3 /* MovieSearchTableViewCell.swift */; };
-		8C1460632A1B469F005FAED3 /* ReviewWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1460622A1B469F005FAED3 /* ReviewWriteView.swift */; };
+		8C1460632A1B469F005FAED3 /* ReviewWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1460622A1B469F005FAED3 /* ReviewWriteViewController.swift */; };
 		8C14606A2A1B8FF1005FAED3 /* GoodPointSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1460692A1B8FF1005FAED3 /* GoodPointSelectView.swift */; };
 		8C14606C2A1B901E005FAED3 /* ActingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14606B2A1B901E005FAED3 /* ActingView.swift */; };
 		8C14606F2A1B9311005FAED3 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14606E2A1B9311005FAED3 /* UIImage+Extension.swift */; };
@@ -24,6 +24,8 @@
 		8C1460732A1B9EF7005FAED3 /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1460722A1B9EF7005FAED3 /* MusicView.swift */; };
 		8C1460762A1B9F5F005FAED3 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1460752A1B9F5F005FAED3 /* StoryView.swift */; };
 		8C1460782A1B9FC2005FAED3 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1460772A1B9FC2005FAED3 /* VideoView.swift */; };
+		8C14607A2A1BAEC1005FAED3 /* LikeHateSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1460792A1BAEC1005FAED3 /* LikeHateSelectView.swift */; };
+		8C14607C2A1CA1D6005FAED3 /* ReviewWritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14607B2A1CA1D6005FAED3 /* ReviewWritingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +40,7 @@
 		8C14605A2A19EF27005FAED3 /* MovieReviewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewDetailView.swift; sourceTree = "<group>"; };
 		8C14605D2A1A13C1005FAED3 /* MovieSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchView.swift; sourceTree = "<group>"; };
 		8C14605F2A1A4516005FAED3 /* MovieSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchTableViewCell.swift; sourceTree = "<group>"; };
-		8C1460622A1B469F005FAED3 /* ReviewWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWriteView.swift; sourceTree = "<group>"; };
+		8C1460622A1B469F005FAED3 /* ReviewWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWriteViewController.swift; sourceTree = "<group>"; };
 		8C1460692A1B8FF1005FAED3 /* GoodPointSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodPointSelectView.swift; sourceTree = "<group>"; };
 		8C14606B2A1B901E005FAED3 /* ActingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActingView.swift; sourceTree = "<group>"; };
 		8C14606E2A1B9311005FAED3 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -46,6 +48,8 @@
 		8C1460722A1B9EF7005FAED3 /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
 		8C1460752A1B9F5F005FAED3 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		8C1460772A1B9FC2005FAED3 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		8C1460792A1BAEC1005FAED3 /* LikeHateSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeHateSelectView.swift; sourceTree = "<group>"; };
+		8C14607B2A1CA1D6005FAED3 /* ReviewWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWritingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +125,10 @@
 		8C1460612A1B40C6005FAED3 /* ReviewWrite */ = {
 			isa = PBXGroup;
 			children = (
-				8C1460622A1B469F005FAED3 /* ReviewWriteView.swift */,
+				8C1460622A1B469F005FAED3 /* ReviewWriteViewController.swift */,
+				8C1460792A1BAEC1005FAED3 /* LikeHateSelectView.swift */,
 				8C1460692A1B8FF1005FAED3 /* GoodPointSelectView.swift */,
+				8C14607B2A1CA1D6005FAED3 /* ReviewWritingView.swift */,
 				8C1460742A1B9F4C005FAED3 /* Views */,
 			);
 			path = ReviewWrite;
@@ -219,15 +225,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C14606C2A1B901E005FAED3 /* ActingView.swift in Sources */,
-				8C1460632A1B469F005FAED3 /* ReviewWriteView.swift in Sources */,
+				8C1460632A1B469F005FAED3 /* ReviewWriteViewController.swift in Sources */,
 				8C1460712A1B9D9D005FAED3 /* DirectingView.swift in Sources */,
 				8C1460452A0E9B0F005FAED3 /* MovieReviewListView.swift in Sources */,
 				8C1460762A1B9F5F005FAED3 /* StoryView.swift in Sources */,
+				8C14607A2A1BAEC1005FAED3 /* LikeHateSelectView.swift in Sources */,
 				8C1460412A0E9B0F005FAED3 /* AppDelegate.swift in Sources */,
 				8C14605B2A19EF27005FAED3 /* MovieReviewDetailView.swift in Sources */,
 				8C1460602A1A4516005FAED3 /* MovieSearchTableViewCell.swift in Sources */,
 				8C14605E2A1A13C1005FAED3 /* MovieSearchView.swift in Sources */,
 				8C1460732A1B9EF7005FAED3 /* MusicView.swift in Sources */,
+				8C14607C2A1CA1D6005FAED3 /* ReviewWritingView.swift in Sources */,
 				8C1460782A1B9FC2005FAED3 /* VideoView.swift in Sources */,
 				8C14606A2A1B8FF1005FAED3 /* GoodPointSelectView.swift in Sources */,
 				8C1460432A0E9B0F005FAED3 /* SceneDelegate.swift in Sources */,

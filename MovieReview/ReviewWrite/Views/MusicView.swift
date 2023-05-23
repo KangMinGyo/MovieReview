@@ -70,7 +70,8 @@ class MusicView: UIView {
             musicButton.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             musicLabel.topAnchor.constraint(equalTo: musicButton.bottomAnchor, constant: 5),
-            musicLabel.centerXAnchor.constraint(equalTo: musicButton.centerXAnchor)
+            musicLabel.centerXAnchor.constraint(equalTo: musicButton.centerXAnchor),
+            musicLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 

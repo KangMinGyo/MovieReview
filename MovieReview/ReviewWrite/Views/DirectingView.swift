@@ -70,7 +70,8 @@ class DirectingView: UIView {
             directorButton.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             directorLabel.topAnchor.constraint(equalTo: directorButton.bottomAnchor, constant: 5),
-            directorLabel.centerXAnchor.constraint(equalTo: directorButton.centerXAnchor)
+            directorLabel.centerXAnchor.constraint(equalTo: directorButton.centerXAnchor),
+            directorLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
