@@ -41,7 +41,6 @@ class DirectingView: UIView {
         isActivated.toggle()
     }
     
-    
     //MARK: - Lifecycle
     
     override init(frame: CGRect) {

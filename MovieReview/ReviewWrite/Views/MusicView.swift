@@ -41,7 +41,6 @@ class MusicView: UIView {
         isActivated.toggle()
     }
     
-    
     //MARK: - Lifecycle
     
     override init(frame: CGRect) {
@@ -73,5 +72,4 @@ class MusicView: UIView {
             musicLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-
 }

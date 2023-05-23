@@ -73,5 +73,4 @@ class StoryView: UIView {
             storyLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-
 }

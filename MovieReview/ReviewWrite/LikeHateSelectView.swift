@@ -108,5 +108,4 @@ class LikeHateSelectView: UIView {
             self.likeHateButtonStackView.addArrangedSubview($0)
         }
     }
-
 }
