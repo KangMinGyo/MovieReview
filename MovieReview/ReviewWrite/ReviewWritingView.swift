@@ -61,11 +61,6 @@ class ReviewWritingView: UIView {
             reviewTextView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             reviewTextView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             reviewTextView.heightAnchor.constraint(equalToConstant: 200)
-//
-//            registerButton.topAnchor.constraint(equalTo: reviewTextView.bottomAnchor, constant: 20),
-//            registerButton.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-//            registerButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-//            registerButton.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 
