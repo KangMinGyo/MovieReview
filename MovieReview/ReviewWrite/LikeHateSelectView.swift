@@ -41,7 +41,7 @@ class LikeHateSelectView: UIView {
     }()
 
     private let likeHateButtonStackView: UIStackView = {
-        let stackView = UIStackView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.spacing = 20
