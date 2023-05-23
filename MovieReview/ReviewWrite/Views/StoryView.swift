@@ -67,7 +67,6 @@ class StoryView: UIView {
             storyButton.topAnchor.constraint(equalTo: topAnchor),
             storyButton.leadingAnchor.constraint(equalTo: leadingAnchor),
             storyButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            storyButton.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             storyLabel.topAnchor.constraint(equalTo: storyButton.bottomAnchor, constant: 5),
             storyLabel.centerXAnchor.constraint(equalTo: storyButton.centerXAnchor),

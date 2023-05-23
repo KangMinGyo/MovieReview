@@ -25,7 +25,6 @@
 		8C1460762A1B9F5F005FAED3 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1460752A1B9F5F005FAED3 /* StoryView.swift */; };
 		8C1460782A1B9FC2005FAED3 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1460772A1B9FC2005FAED3 /* VideoView.swift */; };
 		8C14607A2A1BAEC1005FAED3 /* LikeHateSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1460792A1BAEC1005FAED3 /* LikeHateSelectView.swift */; };
-		8C14607C2A1CA1D6005FAED3 /* ReviewWritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14607B2A1CA1D6005FAED3 /* ReviewWritingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +48,6 @@
 		8C1460752A1B9F5F005FAED3 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		8C1460772A1B9FC2005FAED3 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		8C1460792A1BAEC1005FAED3 /* LikeHateSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeHateSelectView.swift; sourceTree = "<group>"; };
-		8C14607B2A1CA1D6005FAED3 /* ReviewWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWritingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +126,6 @@
 				8C1460622A1B469F005FAED3 /* ReviewWriteViewController.swift */,
 				8C1460792A1BAEC1005FAED3 /* LikeHateSelectView.swift */,
 				8C1460692A1B8FF1005FAED3 /* GoodPointSelectView.swift */,
-				8C14607B2A1CA1D6005FAED3 /* ReviewWritingView.swift */,
 				8C1460742A1B9F4C005FAED3 /* Views */,
 			);
 			path = ReviewWrite;
@@ -235,7 +232,6 @@
 				8C1460602A1A4516005FAED3 /* MovieSearchTableViewCell.swift in Sources */,
 				8C14605E2A1A13C1005FAED3 /* MovieSearchView.swift in Sources */,
 				8C1460732A1B9EF7005FAED3 /* MusicView.swift in Sources */,
-				8C14607C2A1CA1D6005FAED3 /* ReviewWritingView.swift in Sources */,
 				8C1460782A1B9FC2005FAED3 /* VideoView.swift in Sources */,
 				8C14606A2A1B8FF1005FAED3 /* GoodPointSelectView.swift in Sources */,
 				8C1460432A0E9B0F005FAED3 /* SceneDelegate.swift in Sources */,

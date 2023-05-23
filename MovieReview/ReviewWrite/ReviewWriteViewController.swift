@@ -9,6 +9,8 @@ import UIKit
 
 class ReviewWriteViewController: UIViewController {
     
+    let imageSize = CGSize(width: 50, height: 50)
+    
 //    //MARK: - Properties
     
     let scrollView: UIScrollView = {
@@ -90,15 +92,15 @@ class ReviewWriteViewController: UIViewController {
             totalView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             totalView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             
-            likeHateSelectView.topAnchor.constraint(equalTo: totalView.topAnchor, constant: 20),
+            likeHateSelectView.topAnchor.constraint(equalTo: totalView.topAnchor),
             likeHateSelectView.leadingAnchor.constraint(equalTo: totalView.leadingAnchor),
             likeHateSelectView.trailingAnchor.constraint(equalTo: totalView.trailingAnchor),
             
-            goodPointSelectView.topAnchor.constraint(equalTo: likeHateSelectView.bottomAnchor, constant: 40),
+            goodPointSelectView.topAnchor.constraint(equalTo: likeHateSelectView.bottomAnchor, constant: 20),
             goodPointSelectView.leadingAnchor.constraint(equalTo: totalView.leadingAnchor),
             goodPointSelectView.trailingAnchor.constraint(equalTo: totalView.trailingAnchor),
             
-            myReviewLabel.topAnchor.constraint(equalTo: goodPointSelectView.bottomAnchor, constant: 40),
+            myReviewLabel.topAnchor.constraint(equalTo: goodPointSelectView.bottomAnchor, constant: 20),
             myReviewLabel.leadingAnchor.constraint(equalTo: totalView.leadingAnchor),
             myReviewLabel.trailingAnchor.constraint(equalTo: totalView.trailingAnchor),
 

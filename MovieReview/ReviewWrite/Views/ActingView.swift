@@ -67,7 +67,6 @@ class ActingView: UIView {
             actingButton.topAnchor.constraint(equalTo: topAnchor),
             actingButton.leadingAnchor.constraint(equalTo: leadingAnchor),
             actingButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            actingButton.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             actingLabel.topAnchor.constraint(equalTo: actingButton.bottomAnchor, constant: 5),
             actingLabel.centerXAnchor.constraint(equalTo: actingButton.centerXAnchor),
