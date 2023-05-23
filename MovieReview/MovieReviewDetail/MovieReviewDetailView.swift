@@ -87,15 +87,14 @@ class MovieReviewDetailView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         view.backgroundColor = .systemBackground
         
-        configureComponent()
+        addSubView()
     }
     
     //MARK: - Configure
     
-    func configureComponent() {
+    func addSubView() {
         view.addSubview(movieNameLabel)
         view.addSubview(dateLabel)
         view.addSubview(posterImageView)
@@ -106,6 +105,10 @@ class MovieReviewDetailView: UIViewController {
         reviewView.addSubview(reviewTextView)
         reviewView.addSubview(tagLabel)
         
+        configureComponent()
+    }
+    
+    func configureComponent() {
         NSLayoutConstraint.activate([
             movieNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             movieNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
