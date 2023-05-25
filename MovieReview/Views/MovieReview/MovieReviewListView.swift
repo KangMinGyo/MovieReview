@@ -36,14 +36,13 @@ class MovieReviewListView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "리뷰 목록"
         navigationItem.rightBarButtonItem = movieSearchButton
-        
         configureCollectionView()
         configureComponent()
     }
-
+    
     //MARK: - Configure
     
     func configureCollectionView() {        

@@ -9,6 +9,8 @@ import UIKit
 
 class MovieSearchView: UIViewController {
     
+    var viewModel = MovieSearchViewModel(networkManager: NetworkManager())
+    
     //MARK: - Properties
     
     let searchBar = UISearchBar()
@@ -27,12 +29,12 @@ class MovieSearchView: UIViewController {
 
         title = "영화 검색"
         view.backgroundColor = .systemBackground
-        
         configureTableView()
         setUpSearchBar()
         configureComponent()
+        viewModel.getSearchDatas()
     }
-    
+
     //MARK: - Configure
     
     func configureTableView() {
@@ -69,6 +71,7 @@ extension MovieSearchView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieSearchTableViewCell.identifier, for: indexPath) as! MovieSearchTableViewCell
+        cell.movieNameLabel.text = viewModel.searchData?.movieListResult.movieList[indexPath.row].movieNm
         return cell
     }
     
