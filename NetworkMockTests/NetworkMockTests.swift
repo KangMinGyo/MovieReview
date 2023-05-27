@@ -46,28 +46,6 @@ final class NetworkMockTests: XCTestCase {
         XCTAssertEqual(result?.movieListResult.movieList.first?.movieNm, expectation?.movieListResult.movieList.first?.movieNm)
     }
     
-//    func test_fetchData_Data에_대한_잘못된_dataType을_넘겼을때() {
-//        // given
-//        let mockURLSession = MockURLSession.make(url: url,
-//                                                 data: data,
-//                                                 statusCode: 200)
-//        let sut = NetworkManager(session: mockURLSession)
-//        
-//        
-//        // when
-//        var result: NetworkError?
-//        sut.fetchData(for: url,
-//                      dataType: SearchData.self) { response in
-//            if case let .failure(error) = response {
-//                result = error as? NetworkError
-//            }
-//        }
-//        
-//        // then
-//        let expectation: NetworkError = NetworkError.failToParse
-//        XCTAssertEqual(result, expectation)
-//    }
-    
     func test_fetchData_Data가_없고_statusCode가_500일때() {
         // given
         let mockURLSession = MockURLSession.make(url: url,

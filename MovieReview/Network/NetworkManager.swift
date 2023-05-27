@@ -16,7 +16,7 @@ final class NetworkManager {
 
     let session: URLSessionProtocol
     
-    // URLSession을 주입 받음. 테스트할 때는 MockURLSession 을 주입
+    // URLSession을 주입 받고, 테스트할 때는 MockURLSession을 주입
     init(session: URLSessionProtocol = URLSession.shared) {
         self.session = session
     }
