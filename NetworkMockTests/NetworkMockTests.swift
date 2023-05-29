@@ -9,28 +9,30 @@ import XCTest
 @testable import MovieReview
 
 final class NetworkMockTests: XCTestCase {
-
+    
     var url: String!
     var data: Data!
-    
+    var title: String!
+
     override func setUpWithError() throws {
-        url = "https://kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=60c9b995596ead85ff6e59a8d3725e72&movieNm=범죄도시"
+        title = "범죄도시"
+        url = BaseURL.kobis.rawValue + URLPath.searchMovie.rawValue + title
         url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        data = JsonLoader.data(fileName: "SearchData")
+        data = JsonLoader.data(fileName: "SearchDatas")
     }
-    
+
     override func tearDownWithError() throws {
         url = nil
         data = nil
     }
-    
+
     func test_fetchData_Data가_있고_statusCode가_200일때() {
         // given
         let mockURLSession = MockURLSession.make(url: url,
                                                  data: data,
                                                  statusCode: 200)
         let sut = NetworkManager(session: mockURLSession)
-        
+
         // when
         var result: SearchData?
         sut.fetchData(for: url,
@@ -39,20 +41,20 @@ final class NetworkMockTests: XCTestCase {
                 result = data
             }
         }
-        
+
         // then
-        let expectation: SearchData? = JsonLoader.load(type: SearchData.self, fileName: "SearchData")
+        let expectation: SearchData? = JsonLoader.load(type: SearchData.self, fileName: "SearchDatas")
         XCTAssertEqual(result?.movieListResult.movieList.count, expectation?.movieListResult.movieList.count)
-        XCTAssertEqual(result?.movieListResult.movieList.first?.movieNm, expectation?.movieListResult.movieList.first?.movieNm)
+        XCTAssertEqual(result?.movieListResult.movieList.first?.movieNm, "범죄도시3")
     }
-    
+
     func test_fetchData_Data가_없고_statusCode가_500일때() {
         // given
         let mockURLSession = MockURLSession.make(url: url,
                                                  data: nil,
                                                  statusCode: 500)
         let sut = NetworkManager(session: mockURLSession)
-        
+
         // when
         var result: Error?
         sut.fetchData(for: url,
@@ -61,7 +63,7 @@ final class NetworkMockTests: XCTestCase {
                 result = error
             }
         }
-        
+
         // then
         XCTAssertNotNil(result)
     }

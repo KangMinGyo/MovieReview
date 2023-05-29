@@ -32,7 +32,7 @@ class MovieSearchView: UIViewController {
         configureTableView()
         setUpSearchBar()
         configureComponent()
-        viewModel.getSearchDatas()
+        viewModel.getSearchDatas(title: "범죄도시")
     }
 
     //MARK: - Configure
@@ -71,7 +71,7 @@ extension MovieSearchView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieSearchTableViewCell.identifier, for: indexPath) as! MovieSearchTableViewCell
-        cell.movieNameLabel.text = viewModel.searchData?.movieListResult.movieList[indexPath.row].movieNm
+//        cell.movieNameLabel.text = viewModel.searchData?.movieListResult.movieList[indexPath.row].movieNm
         return cell
     }
     

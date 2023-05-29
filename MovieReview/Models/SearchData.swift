@@ -18,13 +18,13 @@ struct MovieListResult : Decodable {
 struct MovieList : Decodable {
     let movieNm, movieNmEn: String
     let prdtYear, nationAlt, genreAlt: String
-    let directors: [directors]
+    let directors: [Director]
     
     var movieInfo: String {
         return String(nationAlt + " | " + genreAlt + " | " + prdtYear)
     }
 }
 
-struct directors : Decodable {
+struct Director : Decodable {
     let peopleNm: String
 }

@@ -7,6 +7,14 @@
 
 import Foundation
 
+enum BaseURL: String {
+    case kobis = "https://kobis.or.kr/kobisopenapi/webservice/rest"
+}
+
+enum URLPath: String {
+    case searchMovie = "/movie/searchMovieList.json?key=60c9b995596ead85ff6e59a8d3725e72&movieNm="
+}
+
 enum NetworkError: Error {
     case failToParse
     case invalid
@@ -51,37 +59,3 @@ final class NetworkManager {
         dataTask.resume()
     }
 }
-
-/*
- //data : 서버에서 반환된 데이터
- //response : HTTP 헤더 및 상태 코드와 같은 응답 메타 데이터를 제공하는 객체
- func getData() {
-     url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-     if let url = URL(string: url) {
-         let session = URLSession(configuration: .default)
-         let task = session.dataTask(with: url) { (data, response, err) in
-             if err != nil {
-                 print("err")
-                 return
-             }
-             
-             if let data = data,
-             let response = response as? HTTPURLResponse,
-                200..<400 ~= response.statusCode {
-                 do {
-                     let decodedData = try JSONDecoder().decode(SearchData.self, from: data) //SearchData형으로 Decoding
-                     self.searchData = decodedData
-                     DispatchQueue.main.async {
-                         self.movieSearchTableView.reloadData()
-                     }
-                 } catch {
-                     print("")
-                 }
-             } else {
-                 print("")
-             }
-         }
-         task.resume()
-     }
- }
- */

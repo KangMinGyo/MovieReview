@@ -9,9 +9,8 @@ import Foundation
 @testable import MovieReview
 
 class MockURLSession: URLSessionProtocol {
-
-    typealias Response = (data: Data?, urlResponse: URLResponse?, error: Error?)
     
+    typealias Response = (data: Data?, urlResponse: URLResponse?, error: Error?)
     let response: Response
     
     init(response: Response) {
@@ -30,9 +29,10 @@ class MockURLSession: URLSessionProtocol {
     static func make(url: String, data: Data?, statusCode: Int) -> MockURLSession {
         let mockURLSession: MockURLSession = {
             let urlResponse = HTTPURLResponse(url: URL(string: url)!,
-                                           statusCode: statusCode,
-                                           httpVersion: nil,
-                                           headerFields: nil)
+                                              statusCode: statusCode,
+                                              httpVersion: nil,
+                                              headerFields: nil)
+            
             let mockResponse: MockURLSession.Response = (data: data,
                                                          urlResponse: urlResponse,
                                                          error: nil)

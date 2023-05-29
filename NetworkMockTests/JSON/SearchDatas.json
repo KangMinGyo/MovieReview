@@ -1,0 +1,237 @@
+{
+  "movieListResult": {
+    "totCnt": 9,
+    "source": "영화진흥위원회",
+    "movieList": [
+      {
+        "movieCd": "20226411",
+        "movieNm": "범죄도시3",
+        "movieNmEn": "THE ROUNDUP : NO WAY OUT",
+        "prdtYear": "2022",
+        "openDt": "20230531",
+        "typeNm": "장편",
+        "prdtStatNm": "개봉예정",
+        "nationAlt": "한국",
+        "genreAlt": "범죄,액션",
+        "repNationNm": "한국",
+        "repGenreNm": "범죄",
+        "directors": [
+          {
+            "peopleNm": "이상용"
+          }
+        ],
+        "companys": [
+          {
+            "companyCd": "20229048",
+            "companyNm": "주식회사 빅펀치픽쳐스"
+          },
+          {
+            "companyCd": "20063279",
+            "companyNm": "(주)홍필름"
+          },
+          {
+            "companyCd": "20138935",
+            "companyNm": "(주)비에이엔터테인먼트"
+          }
+        ]
+      },
+      {
+        "movieCd": "20204548",
+        "movieNm": "범죄도시2",
+        "movieNmEn": "The Roundup",
+        "prdtYear": "2022",
+        "openDt": "20220518",
+        "typeNm": "장편",
+        "prdtStatNm": "개봉",
+        "nationAlt": "한국",
+        "genreAlt": "범죄,액션",
+        "repNationNm": "한국",
+        "repGenreNm": "범죄",
+        "directors": [
+          {
+            "peopleNm": "이상용"
+          }
+        ],
+        "companys": [
+          {
+            "companyCd": "20229048",
+            "companyNm": "주식회사 빅펀치픽쳐스"
+          },
+          {
+            "companyCd": "20063279",
+            "companyNm": "(주)홍필름"
+          },
+          {
+            "companyCd": "20138935",
+            "companyNm": "(주)비에이엔터테인먼트"
+          }
+        ]
+      },
+      {
+        "movieCd": "20228797",
+        "movieNm": "범죄도시4",
+        "movieNmEn": "THE ROUNDUP : PUNISHMENT",
+        "prdtYear": "2022",
+        "openDt": "",
+        "typeNm": "장편",
+        "prdtStatNm": "촬영진행",
+        "nationAlt": "한국",
+        "genreAlt": "액션",
+        "repNationNm": "한국",
+        "repGenreNm": "액션",
+        "directors": [
+          {
+            "peopleNm": "허명행"
+          }
+        ],
+        "companys": [
+          {
+            "companyCd": "20229048",
+            "companyNm": "주식회사 빅펀치픽쳐스"
+          },
+          {
+            "companyCd": "20063279",
+            "companyNm": "(주)홍필름"
+          },
+          {
+            "companyCd": "20138935",
+            "companyNm": "(주)비에이엔터테인먼트"
+          }
+        ]
+      },
+      {
+        "movieCd": "20172742",
+        "movieNm": "범죄도시",
+        "movieNmEn": "THE OUTLAWS",
+        "prdtYear": "2017",
+        "openDt": "20171003",
+        "typeNm": "장편",
+        "prdtStatNm": "개봉",
+        "nationAlt": "한국",
+        "genreAlt": "범죄,액션",
+        "repNationNm": "한국",
+        "repGenreNm": "범죄",
+        "directors": [
+          {
+            "peopleNm": "강윤성"
+          }
+        ],
+        "companys": [
+          {
+            "companyCd": "20063279",
+            "companyNm": "(주)홍필름"
+          },
+          {
+            "companyCd": "20138935",
+            "companyNm": "(주)비에이엔터테인먼트"
+          }
+        ]
+      },
+      {
+        "movieCd": "20214802",
+        "movieNm": "범죄도시: 나쁜놈들 전성시대",
+        "movieNmEn": "Eminence Hill",
+        "prdtYear": "2019",
+        "openDt": "",
+        "typeNm": "장편",
+        "prdtStatNm": "기타",
+        "nationAlt": "미국",
+        "genreAlt": "액션",
+        "repNationNm": "미국",
+        "repGenreNm": "액션",
+        "directors": [
+          {
+            "peopleNm": "로버트 콘웨이"
+          }
+        ],
+        "companys": [
+          
+        ]
+      },
+      {
+        "movieCd": "20190795",
+        "movieNm": "대범죄도시: 나쁜녀석들",
+        "movieNmEn": "The Scoundrels",
+        "prdtYear": "2018",
+        "openDt": "",
+        "typeNm": "장편",
+        "prdtStatNm": "기타",
+        "nationAlt": "대만",
+        "genreAlt": "액션",
+        "repNationNm": "대만",
+        "repGenreNm": "액션",
+        "directors": [
+          {
+            "peopleNm": "헝츄슈안"
+          }
+        ],
+        "companys": [
+          
+        ]
+      },
+      {
+        "movieCd": "20177928",
+        "movieNm": "바이스: 범죄도시",
+        "movieNmEn": "Vice",
+        "prdtYear": "2015",
+        "openDt": "20171228",
+        "typeNm": "장편",
+        "prdtStatNm": "개봉",
+        "nationAlt": "미국",
+        "genreAlt": "액션,어드벤처,SF",
+        "repNationNm": "미국",
+        "repGenreNm": "액션",
+        "directors": [
+          {
+            "peopleNm": "브라이언 A 밀러"
+          }
+        ],
+        "companys": [
+          
+        ]
+      },
+      {
+        "movieCd": "20156424",
+        "movieNm": "줄루 범죄도시",
+        "movieNmEn": "Zulu",
+        "prdtYear": "2014",
+        "openDt": "20151111",
+        "typeNm": "장편",
+        "prdtStatNm": "개봉",
+        "nationAlt": "프랑스,남아프리카공화국",
+        "genreAlt": "범죄,액션",
+        "repNationNm": "프랑스",
+        "repGenreNm": "범죄",
+        "directors": [
+          {
+            "peopleNm": "제롬 살레"
+          }
+        ],
+        "companys": [
+          
+        ]
+      },
+      {
+        "movieCd": "20088638",
+        "movieNm": "범죄도시",
+        "movieNmEn": "What Doesn't Kill You",
+        "prdtYear": "2008",
+        "openDt": "20141023",
+        "typeNm": "장편",
+        "prdtStatNm": "개봉",
+        "nationAlt": "미국",
+        "genreAlt": "액션,스릴러",
+        "repNationNm": "미국",
+        "repGenreNm": "액션",
+        "directors": [
+          {
+            "peopleNm": "브라이언 굿맨"
+          }
+        ],
+        "companys": [
+          
+        ]
+      }
+    ]
+  }
+}
