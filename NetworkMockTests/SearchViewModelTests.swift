@@ -36,7 +36,9 @@ final class SearchViewModelTests: XCTestCase {
         
         // when
         sut = MovieSearchViewModel(networkManager: NetworkManager(session: mockURLSession))
-        sut.getSearchDatas(title: "범죄도시")
+        sut.getSearchDatas(title: "범죄도시") {
+            
+        }
         
         // then
         let expectation = "범죄도시3"

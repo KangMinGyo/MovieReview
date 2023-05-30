@@ -32,7 +32,6 @@ class MovieSearchView: UIViewController {
         configureTableView()
         setUpSearchBar()
         configureComponent()
-        viewModel.getSearchDatas(title: "범죄도시")
     }
 
     //MARK: - Configure
@@ -66,12 +65,14 @@ class MovieSearchView: UIViewController {
 extension MovieSearchView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.searchData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieSearchTableViewCell.identifier, for: indexPath) as! MovieSearchTableViewCell
-//        cell.movieNameLabel.text = viewModel.searchData?.movieListResult.movieList[indexPath.row].movieNm
+        cell.movieNameLabel.text = viewModel.searchData[indexPath.row].movieNm
+        cell.directorLabel.text = viewModel.searchData[indexPath.row].directors.first?.peopleNm
+        cell.movieInfoLabel.text = viewModel.searchData[indexPath.row].movieInfo
         return cell
     }
     
@@ -83,6 +84,12 @@ extension MovieSearchView: UITableViewDelegate, UITableViewDataSource {
 
 extension MovieSearchView: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-
+        let movieName = searchBar.text
+        viewModel.getSearchDatas(title: "\(movieName ?? "")") {
+            DispatchQueue.main.async {
+                self.movieSearchTableView.reloadData()
+            }
+        }
+        searchBar.resignFirstResponder()
     }
 }
