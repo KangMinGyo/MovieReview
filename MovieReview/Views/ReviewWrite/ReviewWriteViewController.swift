@@ -9,6 +9,8 @@ import UIKit
 
 class ReviewWriteViewController: UIViewController {
     
+    var movieTitle = String()
+    
     //MARK: - Properties
     
     let scrollView: UIScrollView = {
@@ -61,7 +63,7 @@ class ReviewWriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "리뷰 작성"
+        title = movieTitle
         view.backgroundColor = .systemBackground
         
         addSubView()
