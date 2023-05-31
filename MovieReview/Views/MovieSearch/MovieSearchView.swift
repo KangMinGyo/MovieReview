@@ -78,7 +78,8 @@ extension MovieSearchView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextVC = ReviewWriteViewController()
-        nextVC.movieTitle = viewModel.searchData[indexPath.row].movieNm
+        let data = viewModel.searchData[indexPath.row]
+        nextVC.viewModel.searchData = data
         self.show(nextVC, sender: self)
     }
 }

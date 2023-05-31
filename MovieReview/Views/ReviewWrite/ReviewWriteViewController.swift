@@ -9,7 +9,7 @@ import UIKit
 
 class ReviewWriteViewController: UIViewController {
     
-    var movieTitle = String()
+    var viewModel = ReviewWriteViewModel()
     
     //MARK: - Properties
     
@@ -63,10 +63,12 @@ class ReviewWriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = movieTitle
+        title = viewModel.searchData?.movieNm
         view.backgroundColor = .systemBackground
         
         addSubView()
+        
+        viewModel.setRealmData()
     }
 
     //MARK: - Configure
