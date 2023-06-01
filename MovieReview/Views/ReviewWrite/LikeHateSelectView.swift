@@ -8,6 +8,8 @@
 import UIKit
 
 class LikeHateSelectView: UIView {
+
+    var likeHateValue: String?
     
     //MARK: - Properties
     
@@ -50,11 +52,11 @@ class LikeHateSelectView: UIView {
         if sender.tag == 0 {
             likeButton.layer.borderColor = UIColor(named: "mrRed")?.cgColor
             hateButton.layer.borderColor = UIColor.gray.cgColor
-            print(0)
+            self.likeHateValue = "Like"
         } else {
             likeButton.layer.borderColor = UIColor.gray.cgColor
             hateButton.layer.borderColor = UIColor(named: "mrRed")?.cgColor
-            print(1)
+            self.likeHateValue = "Hate"
         }
     }
 

@@ -49,6 +49,8 @@ class ReviewWriteViewController: UIViewController {
     }()
 
     @objc func registerButtonAction() {
+        viewModel.likeHateValue = likeHateSelectView.likeHateValue
+        viewModel.setRealmData()
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -67,8 +69,6 @@ class ReviewWriteViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         addSubView()
-        
-        viewModel.setRealmData()
     }
 
     //MARK: - Configure

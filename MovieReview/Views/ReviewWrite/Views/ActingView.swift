@@ -8,7 +8,7 @@
 import UIKit
 
 class ActingView: UIView {
-    
+        
     var isActivated : Bool = false {
           didSet {
               if isActivated {
