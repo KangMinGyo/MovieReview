@@ -9,6 +9,7 @@ import UIKit
 
 class GoodPointSelectView: UIView {
     
+    var goodPointSelected = [false, false, false, false, false]
     let imageSize = CGSize(width: 50, height: 50)
     
     //MARK: - Properties
@@ -19,34 +20,11 @@ class GoodPointSelectView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-//    private let actingView : ActingView = {
-//        let view = ActingView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
-    
-    //    private let musicView : MusicView = {
-    //        let view = MusicView()
-    //        view.translatesAutoresizingMaskIntoConstraints = false
-    //        return view
-    //    }()
-        
-    //    private let storyView : StoryView = {
-    //        let view = StoryView()
-    //        view.translatesAutoresizingMaskIntoConstraints = false
-    //        return view
-    //    }()
-    //
-    //    private let videoView : VideoView = {
-    //        let view = VideoView()
-    //        view.translatesAutoresizingMaskIntoConstraints = false
-    //        return view
-    //    }()
-    
+
     lazy var actingButton: UIButton = {
         let button = UIButton()
         let actingImage = UIImage(named: "Acting")?.resize(targetSize: imageSize)
+        button.tag = 0
         button.setBackgroundImage(actingImage, for: UIControl.State.normal)
         button.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -72,6 +50,7 @@ class GoodPointSelectView: UIView {
     lazy var directorButton: UIButton = {
         let button = UIButton()
         let directorImage = UIImage(named: "director")?.resize(targetSize: imageSize)
+        button.tag = 1
         button.setBackgroundImage(directorImage, for: UIControl.State.normal)
         button.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -97,6 +76,7 @@ class GoodPointSelectView: UIView {
     lazy var musicButton: UIButton = {
         let button = UIButton()
         let musicImage = UIImage(named: "music")?.resize(targetSize: imageSize)
+        button.tag = 2
         button.setBackgroundImage(musicImage, for: UIControl.State.normal)
         button.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -122,6 +102,7 @@ class GoodPointSelectView: UIView {
     lazy var storyButton: UIButton = {
         let button = UIButton()
         let storyImage = UIImage(named: "story")?.resize(targetSize: imageSize)
+        button.tag = 3
         button.setBackgroundImage(storyImage, for: UIControl.State.normal)
         button.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -147,6 +128,7 @@ class GoodPointSelectView: UIView {
     lazy var videoButton: UIButton = {
         let button = UIButton()
         let videoImage = UIImage(named: "video")?.resize(targetSize: imageSize)
+        button.tag = 4
         button.setBackgroundImage(videoImage, for: UIControl.State.normal)
         button.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -179,7 +161,42 @@ class GoodPointSelectView: UIView {
     }()
     
     @objc func goodPointButtonAction(sender: UIButton) {
-        print("클릭")
+        if sender.tag == 0 {
+            goodPointSelected[0].toggle()
+            if goodPointSelected[0] == true {
+                actingLabel.textColor = UIColor(named: "mrRed")
+            } else {
+                actingLabel.textColor = .black
+            }
+        } else if sender.tag == 1 {
+            goodPointSelected[1].toggle()
+            if goodPointSelected[1] == true {
+                directorLabel.textColor = UIColor(named: "mrRed")
+            } else {
+                directorLabel.textColor = .black
+            }
+        } else if sender.tag == 2 {
+            goodPointSelected[2].toggle()
+            if goodPointSelected[2] == true {
+                musicLabel.textColor = UIColor(named: "mrRed")
+            } else {
+                musicLabel.textColor = .black
+            }
+        } else if sender.tag == 3 {
+            goodPointSelected[3].toggle()
+            if goodPointSelected[3] == true {
+                storyLabel.textColor = UIColor(named: "mrRed")
+            } else {
+                storyLabel.textColor = .black
+            }
+        } else {
+            goodPointSelected[4].toggle()
+            if goodPointSelected[4] == true {
+                vedioLabel.textColor = UIColor(named: "mrRed")
+            } else {
+                vedioLabel.textColor = .black
+            }
+        }
     }
 
     //MARK: - Lifecycle

@@ -18,10 +18,10 @@ class ReviewWritingView: UIView {
         return label
     }()
     
-    private let reviewTextView: UITextView = {
+    let reviewTextView: UITextView = {
         let textView = UITextView()
         textView.text = "관람평을 작성해주세요."
-        textView.font = .systemFont(ofSize: 15)
+        textView.textColor = .lightGray
         textView.backgroundColor = .systemGray6
         textView.isScrollEnabled = false
         textView.translatesAutoresizingMaskIntoConstraints = false

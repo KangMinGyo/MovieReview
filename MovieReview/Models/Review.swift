@@ -15,5 +15,5 @@ class Review: Object {
     @objc dynamic var reviewDate: String = ""
     @objc dynamic var reviewLikeHate: String = ""
     @objc dynamic var reviewText: String = ""
-    @objc dynamic var reviewTag: String = ""
+    let reviewTag = List<Bool>()
 }

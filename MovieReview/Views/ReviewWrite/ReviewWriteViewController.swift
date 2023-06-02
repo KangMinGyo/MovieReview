@@ -50,6 +50,8 @@ class ReviewWriteViewController: UIViewController {
 
     @objc func registerButtonAction() {
         viewModel.likeHateValue = likeHateSelectView.likeHateValue
+        viewModel.goodPointValue = goodPointSelectView.goodPointSelected
+        viewModel.reviewText = reviewWritingView.reviewTextView.text
         viewModel.setRealmData()
         self.navigationController?.popToRootViewController(animated: true)
     }
@@ -66,9 +68,12 @@ class ReviewWriteViewController: UIViewController {
         super.viewDidLoad()
 
         title = viewModel.searchData?.movieNm
+        reviewWritingView.reviewTextView.delegate = self
         view.backgroundColor = .systemBackground
         
         addSubView()
+        
+        self.hideKeyboard()
     }
 
     //MARK: - Configure
@@ -114,5 +119,32 @@ class ReviewWriteViewController: UIViewController {
             registerButton.trailingAnchor.constraint(equalTo: totalView.trailingAnchor),
             registerButton.bottomAnchor.constraint(equalTo: totalView.bottomAnchor, constant: -300),
         ])
+    }
+}
+
+extension ReviewWriteViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if reviewWritingView.reviewTextView.textColor == UIColor.lightGray {
+            reviewWritingView.reviewTextView.text = ""
+            reviewWritingView.reviewTextView.textColor = UIColor.systemGray
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if reviewWritingView.reviewTextView.text.isEmpty {
+            reviewWritingView.reviewTextView.text = "내용을 입력해주세요."
+            reviewWritingView.reviewTextView.textColor = UIColor.lightGray
+        }
+    }
+}
+
+extension UIViewController {
+    func hideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

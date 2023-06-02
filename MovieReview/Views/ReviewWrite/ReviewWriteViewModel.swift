@@ -12,6 +12,8 @@ class ReviewWriteViewModel {
     
     var searchData: MovieList?
     var likeHateValue: String?
+    var goodPointValue: [Bool]?
+    var reviewText: String?
     
     var dateString: String? {
         let date =  Date()
@@ -29,16 +31,23 @@ class ReviewWriteViewModel {
         realmData.movieInfo = searchData?.movieInfo ?? "정보 없음"
         realmData.reviewDate = dateString ?? "날짜 없음"
         realmData.reviewLikeHate = likeHateValue ?? ""
-        realmData.reviewText = "너무 재밌어요!"
-        realmData.reviewTag = ""
+        realmData.reviewText = reviewText ?? ""
+        realmData.reviewTag.append(objectsIn: goodPointValue ?? [])
         
         print(realmData)
+
 //        // Realm 파일 위치
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+//
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(realmData)
+        }
+//
+        //삭제
 //        let realm = try! Realm()
 //        try! realm.write {
-//            realm.add(realmData)
+//            realm.delete(realm.objects(Review.self))
 //        }
     }
 }
