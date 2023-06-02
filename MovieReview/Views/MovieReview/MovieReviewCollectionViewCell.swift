@@ -13,21 +13,21 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Properties
     
-    private let posterImageView: UIImageView = {
+    let posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "poster")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    private let movieNameLabel: UILabel = {
+    let movieNameLabel: UILabel = {
         let label = UILabel()
         label.text = "영화 제목"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private let directorNameLabel: UILabel = {
+    let directorNameLabel: UILabel = {
         let label = UILabel()
         label.text = "영화 감독"
         label.font = .systemFont(ofSize: 15)
@@ -35,7 +35,7 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private let movieInfoLabel: UILabel = {
+    let movieInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "미국 | 미스터리, 범죄 | 2000"
         label.font = .systemFont(ofSize: 15)
@@ -43,7 +43,7 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private let dateLabel: UILabel = {
+    let dateLabel: UILabel = {
         let label = UILabel()
         label.text = "작성일: 23.01.19 오후 5:23"
         label.textColor = .systemGray2

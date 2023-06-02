@@ -33,22 +33,10 @@ class ReviewWriteViewModel {
         realmData.reviewLikeHate = likeHateValue ?? ""
         realmData.reviewText = reviewText ?? ""
         realmData.reviewTag.append(objectsIn: goodPointValue ?? [])
-        
-        print(realmData)
 
-//        // Realm 파일 위치
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-//
         let realm = try! Realm()
         try! realm.write {
             realm.add(realmData)
         }
-//
-        //삭제
-//        let realm = try! Realm()
-//        try! realm.write {
-//            realm.delete(realm.objects(Review.self))
-//        }
     }
 }
-

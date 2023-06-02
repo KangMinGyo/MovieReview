@@ -7,7 +7,9 @@
 
 import UIKit
 
-class MovieReviewListView: UIViewController {
+class MovieReviewListViewController: UIViewController {
+    
+    var viewModel = MovieReviewListViewModel()
     
     //MARK: - Properties
     
@@ -41,6 +43,8 @@ class MovieReviewListView: UIViewController {
         navigationItem.rightBarButtonItem = movieSearchButton
         configureCollectionView()
         configureComponent()
+        
+        viewModel.fetchReview()
     }
     
     //MARK: - Configure
@@ -63,14 +67,19 @@ class MovieReviewListView: UIViewController {
     }
 }
 
-extension MovieReviewListView: UICollectionViewDataSource {
+extension MovieReviewListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel.review.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieReviewCollectionViewCell.identifier, for: indexPath) as! MovieReviewCollectionViewCell
+        let review = viewModel.review[indexPath.row]
+        cell.movieNameLabel.text = review.movieName
+        cell.directorNameLabel.text = review.movieDirector
+        cell.movieInfoLabel.text = review.movieInfo
+        cell.dateLabel.text = review.reviewDate
         return cell
     }
     
@@ -80,11 +89,11 @@ extension MovieReviewListView: UICollectionViewDataSource {
     }
 }
 
-extension MovieReviewListView: UICollectionViewDelegate {
+extension MovieReviewListViewController: UICollectionViewDelegate {
     
 }
 
-extension MovieReviewListView: UICollectionViewDelegateFlowLayout {
+extension MovieReviewListViewController: UICollectionViewDelegateFlowLayout {
     //Cell의 크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width - 20, height: view.frame.width / 2.5)
