@@ -7,13 +7,14 @@
 
 import UIKit
 
-class MovieReviewDetailView: UIViewController {
+class MovieReviewDetailViewController: UIViewController {
+    
+    let viewModel = MovieReviewDetailViewModel()
     
     //MARK: - Properties
     
     private let movieNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "영화 제목"
         label.font = .systemFont(ofSize: 25)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -21,7 +22,6 @@ class MovieReviewDetailView: UIViewController {
     
     private let dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "작성일: 23.01.19 오후 5:23"
         label.textColor = .systemGray2
         label.font = .systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -57,7 +57,6 @@ class MovieReviewDetailView: UIViewController {
     
     private let likeUnlikeLabel: UILabel = {
         let label = UILabel()
-        label.text = "❤️ 좋았어요"
         label.font = .systemFont(ofSize: 15, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -65,7 +64,6 @@ class MovieReviewDetailView: UIViewController {
     
     private let reviewTextView: UITextView = {
         let textView = UITextView()
-        textView.text = "이 영화는 GOAT입니다."
         textView.font = .systemFont(ofSize: 15)
         textView.backgroundColor = .systemGray6
         textView.isScrollEnabled = false
@@ -75,7 +73,6 @@ class MovieReviewDetailView: UIViewController {
     
     private let tagLabel: UILabel = {
         let label = UILabel()
-        label.text = "#연기 #OST"
         label.textColor = .gray
         label.font = .systemFont(ofSize: 13)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -90,9 +87,18 @@ class MovieReviewDetailView: UIViewController {
         view.backgroundColor = .systemBackground
         
         addSubView()
+        configure()
     }
     
     //MARK: - Configure
+    
+    func configure() {
+        movieNameLabel.text = viewModel.movieData.movieName
+        dateLabel.text = viewModel.movieData.reviewDate
+        likeUnlikeLabel.text = viewModel.likeHate()
+        reviewTextView.text = viewModel.movieData.reviewText
+        tagLabel.text = viewModel.goodPoint()
+    }
     
     func addSubView() {
         view.addSubview(movieNameLabel)

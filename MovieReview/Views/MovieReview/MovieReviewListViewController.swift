@@ -84,7 +84,8 @@ extension MovieReviewListViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let nextVC = MovieReviewDetailView()
+        let nextVC = MovieReviewDetailViewController()
+        nextVC.viewModel.movieData = viewModel.review[indexPath.row]
         self.show(nextVC, sender: self)
     }
 }
