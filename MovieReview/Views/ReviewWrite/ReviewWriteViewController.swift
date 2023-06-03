@@ -9,7 +9,7 @@ import UIKit
 
 class ReviewWriteViewController: UIViewController {
     
-    var viewModel = ReviewWriteViewModel()
+    var viewModel = ReviewWriteViewModel(networkManager: NetworkManager())
     
     //MARK: - Properties
     
@@ -72,8 +72,15 @@ class ReviewWriteViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         addSubView()
+        fetchPoster()
         
         self.hideKeyboard()
+    }
+    
+    func fetchPoster() {
+        viewModel.getMoviePoster(title: viewModel.searchData!.movieNm) {
+            print("완")
+        }
     }
 
     //MARK: - Configure

@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 
 class Review: Object {
+    @objc dynamic var imageURL: String = ""
     @objc dynamic var movieName: String = ""
     @objc dynamic var movieDirector: String = ""
     @objc dynamic var movieInfo: String = ""

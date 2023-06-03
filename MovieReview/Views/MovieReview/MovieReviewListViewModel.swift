@@ -15,7 +15,7 @@ class MovieReviewListViewModel {
     func fetchReview() {
         let realm = try! Realm()
         review.append(contentsOf: realm.objects(Review.self))
-        print(review.count)
-        print(review)
+//        print(review.count)
+//        print(review)
     }
 }

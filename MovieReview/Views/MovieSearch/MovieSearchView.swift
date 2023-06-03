@@ -87,6 +87,7 @@ extension MovieSearchView: UITableViewDelegate, UITableViewDataSource {
 extension MovieSearchView: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let movieName = searchBar.text
+        
         viewModel.getSearchDatas(title: "\(movieName ?? "")") {
             DispatchQueue.main.async {
                 self.movieSearchTableView.reloadData()

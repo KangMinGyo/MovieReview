@@ -38,6 +38,7 @@
 		8C313CC32A2624A800A2DAE6 /* ReviewWriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C313CC22A2624A800A2DAE6 /* ReviewWriteViewModel.swift */; };
 		8C313CC52A29D48000A2DAE6 /* MovieReviewListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C313CC42A29D48000A2DAE6 /* MovieReviewListViewModel.swift */; };
 		8C313CC72A2A14F400A2DAE6 /* MovieReviewDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C313CC62A2A14F400A2DAE6 /* MovieReviewDetailViewModel.swift */; };
+		8C313CC92A2B056200A2DAE6 /* SearchPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C313CC82A2B056200A2DAE6 /* SearchPoster.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		8C313CC22A2624A800A2DAE6 /* ReviewWriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWriteViewModel.swift; sourceTree = "<group>"; };
 		8C313CC42A29D48000A2DAE6 /* MovieReviewListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewListViewModel.swift; sourceTree = "<group>"; };
 		8C313CC62A2A14F400A2DAE6 /* MovieReviewDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewDetailViewModel.swift; sourceTree = "<group>"; };
+		8C313CC82A2B056200A2DAE6 /* SearchPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPoster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			children = (
 				8C1460862A1DDC5F005FAED3 /* Review.swift */,
 				8C1460882A1E2D61005FAED3 /* SearchData.swift */,
+				8C313CC82A2B056200A2DAE6 /* SearchPoster.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				8C313CC72A2A14F400A2DAE6 /* MovieReviewDetailViewModel.swift in Sources */,
 				8C14606F2A1B9311005FAED3 /* UIImage+Extension.swift in Sources */,
 				8C1460572A0E9C87005FAED3 /* MovieReviewCollectionViewCell.swift in Sources */,
+				8C313CC92A2B056200A2DAE6 /* SearchPoster.swift in Sources */,
 				8C1460922A1F45F3005FAED3 /* MovieSearchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
