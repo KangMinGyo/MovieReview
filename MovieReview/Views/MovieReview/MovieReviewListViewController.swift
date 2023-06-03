@@ -81,7 +81,7 @@ extension MovieReviewListViewController: UICollectionViewDataSource {
         let review = viewModel.review[indexPath.row]
         let url = BaseURL.poster.rawValue + review.imageURL
 
-        cell.posterImageView.downloadImage(from: URL(string: url)!)
+        cell.posterImageView.setImageUrl(url)
         cell.movieNameLabel.text = review.movieName
         cell.directorNameLabel.text = review.movieDirector
         cell.movieInfoLabel.text = review.movieInfo
@@ -115,22 +115,4 @@ extension MovieReviewListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     }
-}
-
-extension UIImageView {
-   func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-      URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-   }
-    
-   func downloadImage(from url: URL) {
-      getData(from: url) {
-         data, response, error in
-         guard let data = data, error == nil else {
-            return
-         }
-         DispatchQueue.main.async() {
-            self.image = UIImage(data: data)
-         }
-      }
-   }
 }

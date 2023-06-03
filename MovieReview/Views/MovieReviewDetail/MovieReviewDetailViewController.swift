@@ -94,7 +94,7 @@ class MovieReviewDetailViewController: UIViewController {
     func configure() {
         
         let url = BaseURL.poster.rawValue + viewModel.movieData.imageURL
-        posterImageView.downloadImage(from: URL(string: url)!)
+        posterImageView.setImageUrl(url)
         movieNameLabel.text = viewModel.movieData.movieName
         dateLabel.text = viewModel.movieData.reviewDate
         likeUnlikeLabel.text = viewModel.likeHate()
