@@ -43,8 +43,11 @@ class MovieReviewListViewController: UIViewController {
         navigationItem.rightBarButtonItem = movieSearchButton
         configureCollectionView()
         configureComponent()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         viewModel.fetchReview()
+        collectionView.reloadData()
     }
     
     //MARK: - Configure

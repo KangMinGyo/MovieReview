@@ -15,7 +15,7 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
     
     let posterImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "poster")
+//        imageView.image = UIImage(named: "poster")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -66,6 +66,11 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.posterImageView.image = nil
     }
     
     //MARK: - Configure

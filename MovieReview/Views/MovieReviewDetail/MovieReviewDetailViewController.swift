@@ -30,7 +30,6 @@ class MovieReviewDetailViewController: UIViewController {
     
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "poster")
         imageView.layer.shadowColor = UIColor.black.cgColor
         imageView.layer.shadowRadius = 3.0
         imageView.layer.shadowOpacity = 1.0
@@ -93,6 +92,9 @@ class MovieReviewDetailViewController: UIViewController {
     //MARK: - Configure
     
     func configure() {
+        
+        let url = BaseURL.poster.rawValue + viewModel.movieData.imageURL
+        posterImageView.downloadImage(from: URL(string: url)!)
         movieNameLabel.text = viewModel.movieData.movieName
         dateLabel.text = viewModel.movieData.reviewDate
         likeUnlikeLabel.text = viewModel.likeHate()

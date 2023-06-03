@@ -21,6 +21,7 @@ class ReviewWritingView: UIView {
     let reviewTextView: UITextView = {
         let textView = UITextView()
         textView.text = "관람평을 작성해주세요."
+        textView.font = .systemFont(ofSize: 17)
         textView.textColor = .lightGray
         textView.backgroundColor = .systemGray6
         textView.isScrollEnabled = false
