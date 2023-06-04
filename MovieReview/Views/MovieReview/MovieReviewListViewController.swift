@@ -6,12 +6,19 @@
 //
 
 import UIKit
+import Lottie
 
 class MovieReviewListViewController: UIViewController {
     
     var viewModel = MovieReviewListViewModel()
     
     //MARK: - Properties
+    
+    private let loadingView: LoadingView = {
+        let view = LoadingView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+      }()
     
     private let collectionView: UICollectionView = {
         let flowlayout = UICollectionViewFlowLayout()
@@ -35,7 +42,7 @@ class MovieReviewListViewController: UIViewController {
     }
     
     //MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,11 +50,23 @@ class MovieReviewListViewController: UIViewController {
         navigationItem.rightBarButtonItem = movieSearchButton
         configureCollectionView()
         configureComponent()
+        
+        self.loadingView.isLoading = true
+        self.getSomeData { [weak self] in
+            self?.loadingView.isLoading = false
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.fetchReview()
         collectionView.reloadData()
+    }
+    
+    private func getSomeData(completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            print("완료")
+            completion()
+        }
     }
     
     //MARK: - Configure
@@ -59,9 +78,17 @@ class MovieReviewListViewController: UIViewController {
     }
     
     func configureComponent() {
+
+        view.addSubview(loadingView)
         view.addSubview(collectionView)
+        view.bringSubviewToFront(self.loadingView)
 
         NSLayoutConstraint.activate([
+            loadingView.topAnchor.constraint(equalTo: view.topAnchor),
+            loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
