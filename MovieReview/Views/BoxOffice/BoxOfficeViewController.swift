@@ -43,7 +43,7 @@ class BoxOfficeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "리뷰 목록"
+        title = "박스오피스 순위"
         navigationItem.rightBarButtonItem = movieSearchButton
         configureCollectionView()
         configureComponent()
@@ -59,8 +59,8 @@ class BoxOfficeViewController: UIViewController {
     }
     
     private func getSomeData(completion: @escaping () -> ()) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            print("완료")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            print("박스오피스 완료")
             completion()
         }
     }

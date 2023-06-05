@@ -15,6 +15,7 @@ class BoxOfficeCollectionViewCell: UICollectionViewCell {
     
     let posterImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage(named: "poster")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -32,6 +33,99 @@ class BoxOfficeCollectionViewCell: UICollectionViewCell {
         label.font = .systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    let lineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemGray5
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    //박스오피스 랭크
+    let boxOfficeRank: UILabel = {
+        let label = UILabel()
+        label.text = "1"
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let boxOfficeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "박스오피스"
+        label.font = .systemFont(ofSize: 15)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let boxOfficeRankStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 5
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    //누적 관객수
+    let audiAcc: UILabel = {
+        let label = UILabel()
+        label.text = "100"
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let audiAccLabel: UILabel = {
+        let label = UILabel()
+        label.text = "누적관객수"
+        label.font = .systemFont(ofSize: 15)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let audiAccStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 5
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    //전일대비 순위의 증감분
+    let rankInten: UILabel = {
+        let label = UILabel()
+        label.text = "-"
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let rankIntenLabel: UILabel = {
+        let label = UILabel()
+        label.text = "전일 대비"
+        label.font = .systemFont(ofSize: 15)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let rankIntenStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 5
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    let movieInfoStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 15
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
     
     //MARK: - Lifecycle
@@ -61,8 +155,11 @@ class BoxOfficeCollectionViewCell: UICollectionViewCell {
         addSubview(posterImageView)
         addSubview(movieNameLabel)
         addSubview(openDateLabel)
+        addSubview(lineView)
+        addSubview(movieInfoStackView)
         
         configureComponent()
+        configureStackView()
     }
     
     func configureComponent() {
@@ -78,8 +175,36 @@ class BoxOfficeCollectionViewCell: UICollectionViewCell {
             
             openDateLabel.topAnchor.constraint(equalTo: movieNameLabel.bottomAnchor, constant: 5),
             openDateLabel.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 20),
-            openDateLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
+            openDateLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            
+            lineView.topAnchor.constraint(equalTo: openDateLabel.bottomAnchor, constant: 10),
+            lineView.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 20),
+            lineView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            lineView.heightAnchor.constraint(equalToConstant: 1),
+            
+            movieInfoStackView.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 10),
+            movieInfoStackView.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 20),
+            movieInfoStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            movieInfoStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
         ])
+    }
+    
+    func configureStackView() {
+        [boxOfficeRank, boxOfficeLabel].forEach {
+            self.boxOfficeRankStackView.addArrangedSubview($0)
+        }
+        
+        [audiAcc, audiAccLabel].forEach {
+            self.audiAccStackView.addArrangedSubview($0)
+        }
+        
+        [rankInten, rankIntenLabel].forEach {
+            self.rankIntenStackView.addArrangedSubview($0)
+        }
+        
+        [boxOfficeRankStackView, rankIntenStackView, audiAccStackView].forEach {
+            self.movieInfoStackView.addArrangedSubview($0)
+        }
     }
     
     private func configureShadow() {
