@@ -1,16 +1,13 @@
 //
-//  ViewController.swift
+//  BoxOfficeViewController.swift
 //  MovieReview
 //
-//  Created by KangMingyo on 2023/05/13.
+//  Created by KangMingyo on 2023/06/05.
 //
 
 import UIKit
-import Lottie
 
-class MovieReviewListViewController: UIViewController {
-    
-    var viewModel = MovieReviewListViewModel()
+class BoxOfficeViewController: UIViewController {
     
     //MARK: - Properties
     
@@ -36,22 +33,8 @@ class MovieReviewListViewController: UIViewController {
         return button
     }()
     
-    lazy var BoxOfficeButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: UIImage(systemName: "chart.bar.xaxis"),
-                                     style: .plain,
-                                     target: self,
-                                     action: #selector(BoxOfficeButtonPressed))
-        button.tintColor = .gray
-        return button
-    }()
-    
     @objc func movieSearchButtonPressed() {
         let nextVC = MovieSearchView()
-        self.show(nextVC, sender: self)
-    }
-    
-    @objc func BoxOfficeButtonPressed() {
-        let nextVC = BoxOfficeViewController()
         self.show(nextVC, sender: self)
     }
     
@@ -61,7 +44,7 @@ class MovieReviewListViewController: UIViewController {
         super.viewDidLoad()
         
         title = "리뷰 목록"
-        navigationItem.rightBarButtonItems = [BoxOfficeButton, movieSearchButton]
+        navigationItem.rightBarButtonItem = movieSearchButton
         configureCollectionView()
         configureComponent()
         
@@ -72,7 +55,6 @@ class MovieReviewListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.fetchReview()
         collectionView.reloadData()
     }
     
@@ -85,10 +67,10 @@ class MovieReviewListViewController: UIViewController {
     
     //MARK: - Configure
     
-    func configureCollectionView() {        
+    func configureCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(MovieReviewCollectionViewCell.self, forCellWithReuseIdentifier: MovieReviewCollectionViewCell.identifier)
+        collectionView.register(BoxOfficeCollectionViewCell.self, forCellWithReuseIdentifier: BoxOfficeCollectionViewCell.identifier)
     }
     
     func configureComponent() {
@@ -111,37 +93,28 @@ class MovieReviewListViewController: UIViewController {
     }
 }
 
-extension MovieReviewListViewController: UICollectionViewDataSource {
+extension BoxOfficeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.review.count
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieReviewCollectionViewCell.identifier, for: indexPath) as! MovieReviewCollectionViewCell
-        let review = viewModel.review[indexPath.row]
-        let url = BaseURL.poster.rawValue + review.imageURL
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BoxOfficeCollectionViewCell.identifier, for: indexPath) as! BoxOfficeCollectionViewCell
 
-        cell.posterImageView.setImageUrl(url)
-        cell.movieNameLabel.text = review.movieName
-        cell.directorNameLabel.text = review.movieDirector
-        cell.movieInfoLabel.text = review.movieInfo
-        cell.dateLabel.text = review.reviewDate
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let nextVC = MovieReviewDetailViewController()
-        nextVC.viewModel.movieData = viewModel.review[indexPath.row]
-        self.show(nextVC, sender: self)
+
     }
 }
 
-extension MovieReviewListViewController: UICollectionViewDelegate {
+extension BoxOfficeViewController: UICollectionViewDelegate {
     
 }
 
-extension MovieReviewListViewController: UICollectionViewDelegateFlowLayout {
+extension BoxOfficeViewController: UICollectionViewDelegateFlowLayout {
     //Cell의 크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width - 20, height: view.frame.width / 2.5)

@@ -1,15 +1,15 @@
 //
-//  MovieReviewCollectionViewCell.swift
+//  BoxOfficeCollectionViewCell.swift
 //  MovieReview
 //
-//  Created by KangMingyo on 2023/05/13.
+//  Created by KangMingyo on 2023/06/05.
 //
 
 import UIKit
 
-class MovieReviewCollectionViewCell: UICollectionViewCell {
+class BoxOfficeCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "ReviewCell"
+    static let identifier = "BoxOfficeCell"
     
     //MARK: - Properties
     
@@ -26,27 +26,10 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let directorNameLabel: UILabel = {
+    let openDateLabel: UILabel = {
         let label = UILabel()
-        label.text = "영화 감독"
+        label.text = "2023-05-31 개봉"
         label.font = .systemFont(ofSize: 15)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let movieInfoLabel: UILabel = {
-        let label = UILabel()
-        label.text = "미국 | 미스터리, 범죄 | 2000"
-        label.font = .systemFont(ofSize: 15)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let dateLabel: UILabel = {
-        let label = UILabel()
-        label.text = "작성일: 23.01.19 오후 5:23"
-        label.textColor = .systemGray2
-        label.font = .systemFont(ofSize: 13)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -77,9 +60,7 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
     func addSubView() {
         addSubview(posterImageView)
         addSubview(movieNameLabel)
-        addSubview(directorNameLabel)
-        addSubview(movieInfoLabel)
-        addSubview(dateLabel)
+        addSubview(openDateLabel)
         
         configureComponent()
     }
@@ -95,17 +76,9 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
             movieNameLabel.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 20),
             movieNameLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
             
-            directorNameLabel.topAnchor.constraint(equalTo: movieNameLabel.bottomAnchor, constant: 5),
-            directorNameLabel.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 20),
-            directorNameLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            
-            movieInfoLabel.topAnchor.constraint(equalTo: directorNameLabel.bottomAnchor, constant: 5),
-            movieInfoLabel.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 20),
-            movieInfoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            
-            dateLabel.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 20),
-            dateLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            openDateLabel.topAnchor.constraint(equalTo: movieNameLabel.bottomAnchor, constant: 5),
+            openDateLabel.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 20),
+            openDateLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
     }
     
