@@ -46,6 +46,8 @@
 		8C71A3EC2A2CB4D70094A74D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71A3EB2A2CB4D70094A74D /* LoadingView.swift */; };
 		8C71A3EF2A2DBCC00094A74D /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71A3EE2A2DBCC00094A74D /* BoxOfficeViewController.swift */; };
 		8C71A3F12A2DBD000094A74D /* BoxOfficeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71A3F02A2DBD000094A74D /* BoxOfficeCollectionViewCell.swift */; };
+		8C71A3F32A2E06EA0094A74D /* BoxOfficeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71A3F22A2E06EA0094A74D /* BoxOfficeViewModel.swift */; };
+		8C71A3F52A2E077D0094A74D /* BoxOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71A3F42A2E077D0094A74D /* BoxOffice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		8C71A3EB2A2CB4D70094A74D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8C71A3EE2A2DBCC00094A74D /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
 		8C71A3F02A2DBD000094A74D /* BoxOfficeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeCollectionViewCell.swift; sourceTree = "<group>"; };
+		8C71A3F22A2E06EA0094A74D /* BoxOfficeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewModel.swift; sourceTree = "<group>"; };
+		8C71A3F42A2E077D0094A74D /* BoxOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOffice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,7 @@
 				8C1460862A1DDC5F005FAED3 /* Review.swift */,
 				8C1460882A1E2D61005FAED3 /* SearchData.swift */,
 				8C313CC82A2B056200A2DAE6 /* SearchPoster.swift */,
+				8C71A3F42A2E077D0094A74D /* BoxOffice.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 			children = (
 				8C71A3EE2A2DBCC00094A74D /* BoxOfficeViewController.swift */,
 				8C71A3F02A2DBD000094A74D /* BoxOfficeCollectionViewCell.swift */,
+				8C71A3F22A2E06EA0094A74D /* BoxOfficeViewModel.swift */,
 			);
 			path = BoxOffice;
 			sourceTree = "<group>";
@@ -422,12 +428,14 @@
 				8C1460412A0E9B0F005FAED3 /* AppDelegate.swift in Sources */,
 				8C71A3F12A2DBD000094A74D /* BoxOfficeCollectionViewCell.swift in Sources */,
 				8C14605B2A19EF27005FAED3 /* MovieReviewDetailViewController.swift in Sources */,
+				8C71A3F32A2E06EA0094A74D /* BoxOfficeViewModel.swift in Sources */,
 				8C313CC32A2624A800A2DAE6 /* ReviewWriteViewModel.swift in Sources */,
 				8C313CCE2A2B67E500A2DAE6 /* UIImageView+Extension.swift in Sources */,
 				8C1460602A1A4516005FAED3 /* MovieSearchTableViewCell.swift in Sources */,
 				8C14605E2A1A13C1005FAED3 /* MovieSearchView.swift in Sources */,
 				8C1460872A1DDC5F005FAED3 /* Review.swift in Sources */,
 				8C14607E2A1CA7D8005FAED3 /* ReviewWritingView.swift in Sources */,
+				8C71A3F52A2E077D0094A74D /* BoxOffice.swift in Sources */,
 				8C71A3EC2A2CB4D70094A74D /* LoadingView.swift in Sources */,
 				8C313CBC2A260C1900A2DAE6 /* Observable.swift in Sources */,
 				8C1460892A1E2D61005FAED3 /* SearchData.swift in Sources */,

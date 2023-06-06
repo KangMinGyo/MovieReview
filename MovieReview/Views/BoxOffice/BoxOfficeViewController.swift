@@ -8,6 +8,7 @@
 import UIKit
 
 class BoxOfficeViewController: UIViewController {
+    var viewModel = BoxOfficeViewModel(networkManager: NetworkManager())
     
     //MARK: - Properties
     
@@ -55,11 +56,18 @@ class BoxOfficeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        collectionView.reloadData()
+        viewModel.getBoxOfficeDatas(date: "20230604") {
+            print(self.viewModel.boxOfficeData)
+            if self.viewModel.boxOfficeData.count == 10 {
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
     }
     
     private func getSomeData(completion: @escaping () -> ()) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             print("박스오피스 완료")
             completion()
         }
@@ -96,12 +104,17 @@ class BoxOfficeViewController: UIViewController {
 extension BoxOfficeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel.boxOfficeData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BoxOfficeCollectionViewCell.identifier, for: indexPath) as! BoxOfficeCollectionViewCell
-
+        let data = viewModel.boxOfficeData[indexPath.row]
+        cell.movieNameLabel.text = data.movieNm
+        cell.openDateLabel.text = data.openDt
+        cell.boxOfficeRank.text = data.rank
+        cell.rankInten.text = viewModel.rankIntenCal(data.rankInten)
+        cell.audiAcc.text = viewModel.audiAccCal(data.audiAcc)
         return cell
     }
     
