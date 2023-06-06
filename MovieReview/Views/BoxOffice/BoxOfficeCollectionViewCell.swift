@@ -15,7 +15,6 @@ class BoxOfficeCollectionViewCell: UICollectionViewCell {
     
     let posterImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "poster")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

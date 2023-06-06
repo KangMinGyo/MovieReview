@@ -59,6 +59,7 @@ class BoxOfficeViewController: UIViewController {
         viewModel.getBoxOfficeDatas(date: "20230604") {
             print(self.viewModel.boxOfficeData)
             if self.viewModel.boxOfficeData.count == 10 {
+                self.viewModel.getBoxOfficeMoviePoster()
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -110,11 +111,22 @@ extension BoxOfficeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BoxOfficeCollectionViewCell.identifier, for: indexPath) as! BoxOfficeCollectionViewCell
         let data = viewModel.boxOfficeData[indexPath.row]
+        let url = BaseURL.poster.rawValue
+        
         cell.movieNameLabel.text = data.movieNm
         cell.openDateLabel.text = data.openDt
         cell.boxOfficeRank.text = data.rank
         cell.rankInten.text = viewModel.rankIntenCal(data.rankInten)
         cell.audiAcc.text = viewModel.audiAccCal(data.audiAcc)
+        
+        DispatchQueue.main.async {
+            if self.viewModel.posterUrl.count != 10 {
+                cell.posterImageView.setImageUrl(url)
+            } else {
+                cell.posterImageView.setImageUrl(url + self.viewModel.posterUrl[indexPath.row])
+            }
+        }
+        
         return cell
     }
     
