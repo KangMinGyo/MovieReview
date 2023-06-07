@@ -35,7 +35,7 @@ class BoxOfficeViewController: UIViewController {
     }()
     
     @objc func movieSearchButtonPressed() {
-        let nextVC = MovieSearchView()
+        let nextVC = MovieSearchViewController()
         self.show(nextVC, sender: self)
     }
     
@@ -56,9 +56,10 @@ class BoxOfficeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.getBoxOfficeDatas(date: "20230604") {
+        viewModel.getBoxOfficeDatas(date: "20230605") {
             print(self.viewModel.boxOfficeData)
             if self.viewModel.boxOfficeData.count == 10 {
+                print(self.viewModel.movieName)
                 self.viewModel.getBoxOfficeMoviePoster()
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
@@ -110,17 +111,18 @@ extension BoxOfficeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BoxOfficeCollectionViewCell.identifier, for: indexPath) as! BoxOfficeCollectionViewCell
-        let data = viewModel.boxOfficeData[indexPath.row]
+        cell.setup(with: viewModel.boxOfficeData[indexPath.row])
+        
         let url = BaseURL.poster.rawValue
-        let posterData = viewModel.posterUrl[indexPath.row]
-        
-        cell.posterImageView.setImageUrl(url + posterData)
-        cell.movieNameLabel.text = data.movieNm
-        cell.openDateLabel.text = data.openDt
-        cell.boxOfficeRank.text = data.rank
-        cell.rankInten.text = viewModel.rankIntenCal(data.rankInten)
-        cell.audiAcc.text = viewModel.audiAccCal(data.audiAcc)
-        
+        let posterData = viewModel.posterUrl
+
+        DispatchQueue.main.async {
+            if self.viewModel.posterUrl.count != 10 {
+                cell.posterImageView.setImageUrl(url)
+            } else {
+                cell.posterImageView.setImageUrl(url + posterData[indexPath.row])
+            }
+        }
         return cell
     }
     

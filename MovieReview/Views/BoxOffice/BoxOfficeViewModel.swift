@@ -9,7 +9,7 @@ import Foundation
 
 class BoxOfficeViewModel {
     private let networkManager: NetworkManager
-    var userGuideDescription: Observable<String?> = Observable("Welcome")
+    
     var boxOfficeData = [DailyBoxOfficeList]()
     var posterData = [Results]()
     
@@ -27,11 +27,10 @@ class BoxOfficeViewModel {
                                  dataType: BoxOffice.self) { [weak self] result in
             switch result {
             case .success(let data):
-                self?.setUserGuide(to: "\(data.boxOfficeResult.dailyBoxOfficeList.first?.movieNm ?? "")")
                 self?.boxOfficeData.append(contentsOf: data.boxOfficeResult.dailyBoxOfficeList)
                 completion()
-            case .failure(_):
-                self?.setUserGuide(to: "오류가 발생했습니다. 다시 시도해주세요")
+            case .failure(let err):
+                print(err)
             }
         }
     }
@@ -66,14 +65,10 @@ class BoxOfficeViewModel {
                 self?.posterData.append(contentsOf: data.results)
 //                print(self?.posterData)
                 completion()
-            case .failure(_):
-                self?.setUserGuide(to: "포스터 불러오는데 오류가 발생했습니다. 다시 시도해주세요")
+            case .failure(let err):
+                print(err)
             }
         }
-    }
-    
-    private func setUserGuide(to description: String?) {
-        userGuideDescription.value = description
     }
     
     // 누적 관객 수 만 단위로 변경

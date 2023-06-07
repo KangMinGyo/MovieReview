@@ -70,4 +70,10 @@ class MovieSearchTableViewCell: UITableViewCell {
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
+    
+    func setup(with data: MovieList) {
+        movieNameLabel.text = data.movieNm
+        directorLabel.text = data.directors.first?.peopleNm
+        movieInfoLabel.text = data.movieInfo
+    }
 }

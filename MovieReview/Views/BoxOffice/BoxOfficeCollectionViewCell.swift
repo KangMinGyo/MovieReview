@@ -209,6 +209,15 @@ class BoxOfficeCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    func setup(with data: DailyBoxOfficeList) {
+//        cell.posterImageView.setImageUrl(data.)
+        movieNameLabel.text = data.movieNm
+        openDateLabel.text = data.openDt
+        boxOfficeRank.text = data.rank
+        rankInten.text = data.rankInten
+        audiAcc.text = data.audiAcc
+    }
+    
     private func configureShadow() {
         layer.shadowRadius = 3
         layer.shadowOffset = CGSize(width: 1, height: 1)

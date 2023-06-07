@@ -46,7 +46,7 @@ class MovieReviewListViewController: UIViewController {
     }()
     
     @objc func movieSearchButtonPressed() {
-        let nextVC = MovieSearchView()
+        let nextVC = MovieSearchViewController()
         self.show(nextVC, sender: self)
     }
     
@@ -119,14 +119,7 @@ extension MovieReviewListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieReviewCollectionViewCell.identifier, for: indexPath) as! MovieReviewCollectionViewCell
-        let review = viewModel.review[indexPath.row]
-        let url = BaseURL.poster.rawValue + review.imageURL
-
-        cell.posterImageView.setImageUrl(url)
-        cell.movieNameLabel.text = review.movieName
-        cell.directorNameLabel.text = review.movieDirector
-        cell.movieInfoLabel.text = review.movieInfo
-        cell.dateLabel.text = review.reviewDate
+        cell.setup(with: viewModel.review[indexPath.row])
         return cell
     }
     

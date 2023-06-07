@@ -109,6 +109,15 @@ class MovieReviewCollectionViewCell: UICollectionViewCell {
         ])
     }
     
+    func setup(with data: Review) {
+        let url = BaseURL.poster.rawValue + data.imageURL
+        posterImageView.setImageUrl(url)
+        movieNameLabel.text = data.movieName
+        directorNameLabel.text = data.movieDirector
+        movieInfoLabel.text = data.movieInfo
+        dateLabel.text = data.reviewDate
+    }
+    
     private func configureShadow() {
         layer.shadowRadius = 3
         layer.shadowOffset = CGSize(width: 1, height: 1)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieSearchView: UIViewController {
+class MovieSearchViewController: UIViewController {
     
     var viewModel = MovieSearchViewModel(networkManager: NetworkManager())
     
@@ -62,7 +62,7 @@ class MovieSearchView: UIViewController {
     }
 }
 
-extension MovieSearchView: UITableViewDelegate, UITableViewDataSource {
+extension MovieSearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.searchData.count
@@ -70,9 +70,7 @@ extension MovieSearchView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieSearchTableViewCell.identifier, for: indexPath) as! MovieSearchTableViewCell
-        cell.movieNameLabel.text = viewModel.searchData[indexPath.row].movieNm
-        cell.directorLabel.text = viewModel.searchData[indexPath.row].directors.first?.peopleNm ?? "-"
-        cell.movieInfoLabel.text = viewModel.searchData[indexPath.row].movieInfo
+        cell.setup(with: viewModel.searchData[indexPath.row])
         return cell
     }
     
@@ -84,7 +82,7 @@ extension MovieSearchView: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension MovieSearchView: UISearchBarDelegate {
+extension MovieSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let movieName = searchBar.text
         
