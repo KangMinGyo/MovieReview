@@ -209,15 +209,6 @@ class BoxOfficeCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func setup(with data: DailyBoxOfficeList) {
-//        cell.posterImageView.setImageUrl(data.)
-        movieNameLabel.text = data.movieNm
-        openDateLabel.text = data.openDt
-        boxOfficeRank.text = data.rank
-        rankInten.text = data.rankInten
-        audiAcc.text = data.audiAcc
-    }
-    
     private func configureShadow() {
         layer.shadowRadius = 3
         layer.shadowOffset = CGSize(width: 1, height: 1)
@@ -229,5 +220,41 @@ class BoxOfficeCollectionViewCell: UICollectionViewCell {
     private func configureCornerRadius() {
         contentView.layer.cornerRadius = 15
         contentView.layer.masksToBounds = true
+    }
+    
+    func setPosterImage(with data: String?) {
+        let url = BaseURL.poster.rawValue
+        if let data = data {
+            posterImageView.setImageUrl(url + data)
+        }
+    }
+    
+    func setup(with data: DailyBoxOfficeList) {
+        movieNameLabel.text = data.movieNm
+        openDateLabel.text = data.openDt
+        boxOfficeRank.text = data.rank
+        rankInten.text = rankIntenCal(data.rankInten)
+        audiAcc.text = audiAccCal(data.audiAcc)
+    }
+    
+    // 누적 관객 수 만 단위로 변경
+    func audiAccCal(_ audiAcc: String) -> String {
+        if 10000 <= Int(audiAcc) ?? 0 {
+            let audiAccNum = (Int(audiAcc) ?? 0) / 10000
+            return "\(audiAccNum)만"
+        } else {
+            return audiAcc
+        }
+    }
+    
+    // 전일 대비 증감 계산
+    func rankIntenCal(_ rankInten: String) -> String {
+        if rankInten == "0" {
+            return "-"
+        } else if 0 < Int(rankInten) ?? 0 {
+            return "🔺\(rankInten)"
+        } else {
+            return "🔻\(abs(Int(rankInten) ?? 0))"
+        }
     }
 }

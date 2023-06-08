@@ -112,15 +112,10 @@ extension BoxOfficeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BoxOfficeCollectionViewCell.identifier, for: indexPath) as! BoxOfficeCollectionViewCell
         cell.setup(with: viewModel.boxOfficeData[indexPath.row])
-        
-        let url = BaseURL.poster.rawValue
-        let posterData = viewModel.posterUrl
 
         DispatchQueue.main.async {
-            if self.viewModel.posterUrl.count != 10 {
-                cell.posterImageView.setImageUrl(url)
-            } else {
-                cell.posterImageView.setImageUrl(url + posterData[indexPath.row])
+            if self.viewModel.posterUrl.count == 10 {
+                cell.setPosterImage(with: self.viewModel.posterUrl[indexPath.row])
             }
         }
         return cell
