@@ -51,7 +51,7 @@ class ReviewWriteViewModel {
     }
     
     func getMoviePoster(title: String, completion: @escaping () -> Void) {
-        var url = BaseURL.tmdb.rawValue + URLPath.searchPoster.rawValue + title
+        var url = BaseURL.tmdb.rawValue + URLPath.searchPosterURL.rawValue + title
         url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         posterData = [Results]()
         networkManager.fetchData(for: url, dataType: SearchPoster.self) { [weak self] result in

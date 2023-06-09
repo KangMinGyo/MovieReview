@@ -18,7 +18,7 @@ class MovieSearchViewModel {
     }
     
     func getSearchDatas(title: String, completion: @escaping () -> Void) {
-        var url = BaseURL.kobis.rawValue + URLPath.searchMovie.rawValue + title
+        var url = BaseURL.kobis.rawValue + URLPath.searchMovieURL.rawValue + title
         url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         searchData = [MovieList]()
         networkManager.fetchData(for: url,

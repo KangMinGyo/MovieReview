@@ -49,6 +49,8 @@
 		8C71A3F32A2E06EA0094A74D /* BoxOfficeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71A3F22A2E06EA0094A74D /* BoxOfficeViewModel.swift */; };
 		8C71A3F52A2E077D0094A74D /* BoxOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71A3F42A2E077D0094A74D /* BoxOffice.swift */; };
 		8C71A3F72A30585C0094A74D /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71A3F62A30585C0094A74D /* APIConfiguration.swift */; };
+		8C71A4002A32F4040094A74D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C71A3FF2A32F4040094A74D /* RealmSwift */; };
+		8C71A4072A333AFD0094A74D /* Date+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71A4062A333AFD0094A74D /* Date+Extenstion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,7 @@
 		8C71A3F22A2E06EA0094A74D /* BoxOfficeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewModel.swift; sourceTree = "<group>"; };
 		8C71A3F42A2E077D0094A74D /* BoxOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOffice.swift; sourceTree = "<group>"; };
 		8C71A3F62A30585C0094A74D /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
+		8C71A4062A333AFD0094A74D /* Date+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extenstion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C71A4002A32F4040094A74D /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +137,7 @@
 				8C14603F2A0E9B0F005FAED3 /* MovieReview */,
 				8C1460AC2A1F7B99005FAED3 /* NetworkMockTests */,
 				8C14603E2A0E9B0F005FAED3 /* Products */,
+				8C71A3FE2A32F4040094A74D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,6 +213,7 @@
 			children = (
 				8C14606E2A1B9311005FAED3 /* UIImage+Extension.swift */,
 				8C313CCD2A2B67E500A2DAE6 /* UIImageView+Extension.swift */,
+				8C71A4062A333AFD0094A74D /* Date+Extenstion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -311,6 +317,13 @@
 			path = BoxOffice;
 			sourceTree = "<group>";
 		};
+		8C71A3FE2A32F4040094A74D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -350,6 +363,9 @@
 				8C1460B02A1F7B9A005FAED3 /* PBXTargetDependency */,
 			);
 			name = NetworkMockTests;
+			packageProductDependencies = (
+				8C71A3FF2A32F4040094A74D /* RealmSwift */,
+			);
 			productName = NetworkMockTests;
 			productReference = 8C1460AB2A1F7B99005FAED3 /* NetworkMockTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -431,6 +447,7 @@
 				8C1460412A0E9B0F005FAED3 /* AppDelegate.swift in Sources */,
 				8C71A3F72A30585C0094A74D /* APIConfiguration.swift in Sources */,
 				8C71A3F12A2DBD000094A74D /* BoxOfficeCollectionViewCell.swift in Sources */,
+				8C71A4072A333AFD0094A74D /* Date+Extenstion.swift in Sources */,
 				8C14605B2A19EF27005FAED3 /* MovieReviewDetailViewController.swift in Sources */,
 				8C71A3F32A2E06EA0094A74D /* BoxOfficeViewModel.swift in Sources */,
 				8C313CC32A2624A800A2DAE6 /* ReviewWriteViewModel.swift in Sources */,
@@ -756,6 +773,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8C313CCF2A2C883300A2DAE6 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		8C71A3FF2A32F4040094A74D /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C313CBD2A261D0000A2DAE6 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

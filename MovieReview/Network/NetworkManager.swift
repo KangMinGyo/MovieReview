@@ -13,10 +13,9 @@ enum NetworkError: Error {
 }
 
 final class NetworkManager {
-
+    
     let session: URLSessionProtocol
     
-    // URLSession을 주입 받고, 테스트할 때는 MockURLSession을 주입
     init(session: URLSessionProtocol = URLSession.shared) {
         self.session = session
     }
@@ -29,9 +28,9 @@ final class NetworkManager {
             return
         }
         
-        let dataTask: URLSessionDataTaskProtocol = session.dataTask(with: url, completionHandler: { (data, response, error) in
-            if let error = error {
-                completion(.failure(error))
+        let dataTask: URLSessionDataTaskProtocol = session.dataTask(with: url, completionHandler: { (data, response, err) in
+            if let err = err {
+                completion(.failure(err))
                 return
             }
             

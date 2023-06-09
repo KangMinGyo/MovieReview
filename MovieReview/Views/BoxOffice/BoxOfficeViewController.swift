@@ -56,10 +56,9 @@ class BoxOfficeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.getBoxOfficeDatas(date: "20230605") {
+        viewModel.getBoxOfficeDatas(date: Date().yesterdayDate()) {
             print(self.viewModel.boxOfficeData)
             if self.viewModel.boxOfficeData.count == 10 {
-                print(self.viewModel.movieName)
                 self.viewModel.getBoxOfficeMoviePoster()
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
@@ -69,7 +68,7 @@ class BoxOfficeViewController: UIViewController {
     }
     
     private func getSomeData(completion: @escaping () -> ()) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             print("박스오피스 완료")
             completion()
         }
