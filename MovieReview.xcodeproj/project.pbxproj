@@ -236,8 +236,8 @@
 			children = (
 				8C1460862A1DDC5F005FAED3 /* Review.swift */,
 				8C1460882A1E2D61005FAED3 /* SearchData.swift */,
-				8C313CC82A2B056200A2DAE6 /* SearchPoster.swift */,
 				8C71A3F42A2E077D0094A74D /* BoxOffice.swift */,
+				8C313CC82A2B056200A2DAE6 /* SearchPoster.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

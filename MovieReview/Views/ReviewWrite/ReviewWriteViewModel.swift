@@ -34,7 +34,7 @@ class ReviewWriteViewModel {
     
     func setRealmData() {
         let realmData = Review()
-        realmData.imageURL = posterData.first?.poster_path ?? "URL 없음"
+        realmData.imageURL = posterData.first?.posterPath ?? "URL 없음"
         realmData.movieName = searchData?.movieNm ?? "이름 없음"
         realmData.movieDirector = searchData?.directors.first?.peopleNm ?? "데이터 없음"
         realmData.movieInfo = searchData?.movieInfo ?? "정보 없음"

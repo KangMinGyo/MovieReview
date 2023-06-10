@@ -37,11 +37,11 @@ class BoxOfficeViewModel {
         for i in 0..<boxOfficeData.count {
             let name = boxOfficeData[i].movieNm
             getMoviePoster(title: name) { [self] in
-                if posterData.first?.poster_path == nil {
+                if posterData.first?.posterPath == nil {
                     posterUrl.append(BaseURL.poster.rawValue)
                     print("\(posterUrl), \(name)")
                 } else {
-                    posterUrl.append(posterData.first?.poster_path ?? "")
+                    posterUrl.append(posterData.first?.posterPath ?? "")
                     print("\(posterUrl), \(name)")
                 }
                 posterData = [Results]()
