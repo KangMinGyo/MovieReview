@@ -16,10 +16,35 @@ enum BaseURL: String {
 enum URLPath: String {
     case searchMovieURL = "/movie/searchMovieList.json?key=60c9b995596ead85ff6e59a8d3725e72&movieNm="
     case searchPosterURL = "/3/search/movie?api_key=ab318418ee513b352deb4c9ab21f7ed7&language=ko&page=1&include_adult=false&region=KR&query="
-    case boxOfficeURL = "/boxoffice/searchDailyBoxOfficeList.json?key=60c9b995596ead85ff6e59a8d3725e72&targetDt="
+    case boxOfficeURL = "/boxoffice/searchDailyBoxOfficeList.json?key=60c9b995596ead85ff6e59a8d3725e72&targetDt=" //key=60c9b995596ead85ff6e59a8d3725e72&targetDt=
 }
 
 enum APIKey: String {
     case kobisKey = "60c9b995596ead85ff6e59a8d3725e72"
     case tmdbKey = "ab318418ee513b352deb4c9ab21f7ed7"
 }
+
+struct APIConfiguration {
+    private let baseURL: String
+    private let paramList: [URLQueryItem]
+    private let path: String
+    
+    init(
+        baseURL: BaseURL,
+        path: URLPath,
+        param: [String : Any]
+    ) {
+        self.baseURL = baseURL.rawValue
+        self.path = path.rawValue
+        self.paramList = param.queryItems
+    }
+    
+    func makeURL() -> String {
+        var urlComponent = URLComponents(string: baseURL + path)
+        urlComponent?.queryItems = paramList
+        let url = urlComponent?.url
+        let urlString = url?.absoluteString
+        return urlString?.urlEncoding() ?? ""
+    }
+}
+

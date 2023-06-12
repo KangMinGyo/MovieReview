@@ -30,11 +30,3 @@ class MovieReviewDetailViewModel {
         return goodPointValue
     }
 }
-
-//List<bool> <0x600003ff82c0> (
-//    [0] 0,
-//    [1] 1,
-//    [2] 0,
-//    [3] 1,
-//    [4] 0
-//)

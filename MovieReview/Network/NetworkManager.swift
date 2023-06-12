@@ -13,7 +13,6 @@ enum NetworkError: Error {
 }
 
 final class NetworkManager {
-    
     let session: URLSessionProtocol
     
     init(session: URLSessionProtocol = URLSession.shared) {

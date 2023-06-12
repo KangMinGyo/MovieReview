@@ -8,24 +8,21 @@
 import UIKit
 
 class MovieSearchViewModel {
-
+    
     private let networkManager: NetworkManager
     var userGuideDescription: Observable<String?> = Observable("Welcome")
     var searchData = [MovieList]()
-
+    
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
     }
     
     func getSearchDatas(title: String, completion: @escaping () -> Void) {
-        var url = BaseURL.kobis.rawValue + URLPath.searchMovieURL.rawValue + title
-        url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = BaseURL.kobis.rawValue + URLPath.searchMovieURL.rawValue + title.urlEncoding()
         searchData = [MovieList]()
-        networkManager.fetchData(for: url,
-                                    dataType: SearchData.self) { [weak self] result in
+        networkManager.fetchData(for: url, dataType: SearchData.self) { [weak self] result in
             switch result {
             case .success(let data):
-                self?.setUserGuide(to: "\(data.movieListResult.movieList.first?.movieNm ?? "")")
                 self?.searchData.append(contentsOf: data.movieListResult.movieList)
                 completion()
             case .failure(_):

@@ -20,7 +20,7 @@ class BoxOfficeViewModel {
     
     func getBoxOfficeDatas(date: String, completion: @escaping () -> Void) {
         let url = BaseURL.kobis.rawValue + URLPath.boxOfficeURL.rawValue + date
-        boxOfficeData = [DailyBoxOfficeList]()
+        
         networkManager.fetchData(for: url,
                                  dataType: BoxOffice.self) { [weak self] result in
             switch result {
@@ -32,23 +32,17 @@ class BoxOfficeViewModel {
             }
         }
     }
-
+    
     func getBoxOfficeMoviePoster() {
         for i in 0..<boxOfficeData.count {
             let name = boxOfficeData[i].movieNm
             getMoviePoster(title: name) { [self] in
-                if posterData.first?.posterPath == nil {
-                    posterUrl.append(BaseURL.poster.rawValue)
-                    print("\(posterUrl), \(name)")
-                } else {
-                    posterUrl.append(posterData.first?.posterPath ?? "")
-                    print("\(posterUrl), \(name)")
-                }
+                posterUrl.append(posterData.first?.posterPath ?? "")
                 posterData = [Results]()
             }
         }
     }
-    
+
     func getMoviePoster(title: String, completion: @escaping () -> Void) {
         var url = BaseURL.tmdb.rawValue + URLPath.searchPosterURL.rawValue + title
         url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
