@@ -44,9 +44,8 @@ class BoxOfficeViewModel {
     }
 
     func getMoviePoster(title: String, completion: @escaping () -> Void) {
-        var url = BaseURL.tmdb.rawValue + URLPath.searchPosterURL.rawValue + title
-        url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        posterData = [Results]()
+        var url = BaseURL.tmdb.rawValue + URLPath.searchPosterURL.rawValue + title.urlEncoding()
+        
         networkManager.fetchData(for: url, dataType: SearchPoster.self) { [weak self] result in
             switch result {
             case .success(let data):
