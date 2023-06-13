@@ -10,7 +10,7 @@ import RealmSwift
 
 class ReviewWriteViewModel {
     
-    private let networkManager: NetworkManager
+    private let repository = Repository(networkManager: NetworkManager())
     var userGuideDescription: Observable<String?> = Observable("Welcome")
     
     var searchData: MovieList?
@@ -18,10 +18,6 @@ class ReviewWriteViewModel {
     var likeHateValue: String?
     var goodPointValue: [Bool]?
     var reviewText: String?
-
-    init(networkManager: NetworkManager) {
-        self.networkManager = networkManager
-    }
     
     var dateString: String? {
         let date =  Date()
@@ -43,7 +39,6 @@ class ReviewWriteViewModel {
         realmData.reviewText = reviewText ?? ""
         realmData.reviewTag.append(objectsIn: goodPointValue ?? [])
 
-//        print(realmData)
         let realm = try! Realm()
         try! realm.write {
             realm.add(realmData)
@@ -51,17 +46,13 @@ class ReviewWriteViewModel {
     }
     
     func getMoviePoster(title: String, completion: @escaping () -> Void) {
-        var url = BaseURL.tmdb.rawValue + URLPath.searchPosterURL.rawValue + title
-        url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        posterData = [Results]()
-        networkManager.fetchData(for: url, dataType: SearchPoster.self) { [weak self] result in
+        repository.fetchMoviePoster(title: title) { result in
             switch result {
             case .success(let data):
-                self?.posterData.append(contentsOf: data.results)
-                print(self?.posterData)
+                self.posterData.append(contentsOf: data.results)
                 completion()
-            case .failure(_):
-                self?.setUserGuide(to: "포스터 불러오는데 오류가 발생했습니다. 다시 시도해주세요")
+            case .failure(let err):
+                print(err)
             }
         }
     }

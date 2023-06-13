@@ -8,7 +8,7 @@
 import UIKit
 
 class BoxOfficeViewController: UIViewController {
-    var viewModel = BoxOfficeViewModel(networkManager: NetworkManager())
+    var viewModel = BoxOfficeViewModel()
     
     //MARK: - Properties
     
@@ -57,7 +57,6 @@ class BoxOfficeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.getBoxOfficeDatas(date: Date().yesterdayDate()) {
-            print(self.viewModel.boxOfficeData)
             if self.viewModel.boxOfficeData.count == 10 {
                 self.viewModel.getBoxOfficeMoviePoster()
                 DispatchQueue.main.async {

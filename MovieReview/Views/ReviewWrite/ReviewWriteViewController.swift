@@ -9,7 +9,7 @@ import UIKit
 
 class ReviewWriteViewController: UIViewController {
     
-    var viewModel = ReviewWriteViewModel(networkManager: NetworkManager())
+    var viewModel = ReviewWriteViewModel()
     
     //MARK: - Properties
     

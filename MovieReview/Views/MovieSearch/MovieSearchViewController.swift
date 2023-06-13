@@ -9,7 +9,7 @@ import UIKit
 
 class MovieSearchViewController: UIViewController {
     
-    var viewModel = MovieSearchViewModel(networkManager: NetworkManager())
+    var viewModel = MovieSearchViewModel()
     
     //MARK: - Properties
     
