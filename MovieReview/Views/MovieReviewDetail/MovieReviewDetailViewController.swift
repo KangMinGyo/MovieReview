@@ -61,6 +61,19 @@ class MovieReviewDetailViewController: UIViewController {
         return label
     }()
     
+    private let editDeleteButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "trash.fill"), for: .normal)
+        button.tintColor = .systemGray2
+        button.addTarget(self, action: #selector(editDeleteButtonAction), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    @objc func editDeleteButtonAction() {
+
+    }
+    
     private let reviewTextView: UITextView = {
         let textView = UITextView()
         textView.font = .systemFont(ofSize: 15)
@@ -84,7 +97,6 @@ class MovieReviewDetailViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
-        
         addSubView()
         configure()
     }
@@ -92,7 +104,6 @@ class MovieReviewDetailViewController: UIViewController {
     //MARK: - Configure
     
     func configure() {
-        
         let url = BaseURL.poster.rawValue + viewModel.movieData.imageURL
         posterImageView.setImageUrl(url)
         movieNameLabel.text = viewModel.movieData.movieName
@@ -110,6 +121,7 @@ class MovieReviewDetailViewController: UIViewController {
         view.addSubview(reviewView)
         
         reviewView.addSubview(likeUnlikeLabel)
+        reviewView.addSubview(editDeleteButton)
         reviewView.addSubview(reviewTextView)
         reviewView.addSubview(tagLabel)
         
@@ -139,6 +151,9 @@ class MovieReviewDetailViewController: UIViewController {
             
             likeUnlikeLabel.topAnchor.constraint(equalTo: reviewView.topAnchor, constant: 10),
             likeUnlikeLabel.leadingAnchor.constraint(equalTo: reviewView.leadingAnchor, constant: 10),
+            
+            editDeleteButton.topAnchor.constraint(equalTo: reviewView.topAnchor, constant: 10),
+            editDeleteButton.trailingAnchor.constraint(equalTo: reviewView.trailingAnchor, constant: -10),
             
             reviewTextView.topAnchor.constraint(equalTo: likeUnlikeLabel.bottomAnchor, constant: 5),
             reviewTextView.leadingAnchor.constraint(equalTo: reviewView.leadingAnchor, constant: 10),
