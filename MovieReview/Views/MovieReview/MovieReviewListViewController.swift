@@ -77,7 +77,7 @@ class MovieReviewListViewController: UIViewController {
     }
     
     private func getSomeData(completion: @escaping () -> ()) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             print("완료")
             print("reviewCount: \(self.viewModel.review.count)")
             completion()

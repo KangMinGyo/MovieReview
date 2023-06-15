@@ -71,7 +71,9 @@ class MovieReviewDetailViewController: UIViewController {
     }()
     
     @objc func editDeleteButtonAction() {
-
+        let popUp = PopUpViewController()
+        popUp.modalPresentationStyle = .overCurrentContext
+        self.present(popUp, animated: true)
     }
     
     private let reviewTextView: UITextView = {
