@@ -73,6 +73,7 @@ class MovieReviewDetailViewController: UIViewController {
     @objc func editDeleteButtonAction() {
         let popUp = PopUpViewController()
         popUp.modalPresentationStyle = .overCurrentContext
+        popUp.popUpView.viewModel.movieData = viewModel.movieData
         self.present(popUp, animated: true)
     }
     

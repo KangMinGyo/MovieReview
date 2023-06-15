@@ -14,8 +14,9 @@ class MovieReviewDetailViewModel {
     var goodPointValue = String()
     
     func deleteReview() {
-        let realm = try! Realm()
-        realm.delete(movieData)
+        print("삭제: \(movieData.movieName)")
+//        let realm = try! Realm()
+//        realm.delete(movieData)
     }
     
     func likeHate() -> String {

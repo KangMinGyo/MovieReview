@@ -7,12 +7,13 @@
 import UIKit
 
 class PopUpView: UIView {
-
+    let viewModel = PopUpViewModel()
+    
     //MARK: - Properties
     
     lazy var editButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .gray
+        button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
         button.setTitle("수정하기", for: .normal)
         button.layer.cornerRadius = 10
@@ -24,7 +25,7 @@ class PopUpView: UIView {
 
     lazy var deleteButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .gray
+        button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
         button.setTitle("삭제하기", for: .normal)
         button.layer.cornerRadius = 10
@@ -49,6 +50,7 @@ class PopUpView: UIView {
     
     @objc func deleteButtonAction() {
         print("삭제")
+        viewModel.deleteReview()
     }
     
     //MARK: - Lifecycle

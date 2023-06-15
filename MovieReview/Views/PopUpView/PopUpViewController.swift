@@ -8,9 +8,12 @@
 import UIKit
 
 class PopUpViewController: UIViewController {
+    
+    let viewModel = PopUpViewModel()
+    
     //MARK: - Properties
     
-    private let popUpView: PopUpView = {
+    let popUpView: PopUpView = {
        let view = PopUpView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -21,7 +24,8 @@ class PopUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        view.layer.opacity = 1.0
+        view.layer.opacity = 0.5
+        print("리뷰: \(viewModel.movieData)")
         addSubView()
     }
     
