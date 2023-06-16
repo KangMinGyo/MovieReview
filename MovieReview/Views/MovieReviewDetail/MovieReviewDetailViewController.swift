@@ -10,6 +10,7 @@ import UIKit
 class MovieReviewDetailViewController: UIViewController {
     
     let viewModel = MovieReviewDetailViewModel()
+    var isDelete = false
     
     //MARK: - Properties
     
@@ -73,8 +74,9 @@ class MovieReviewDetailViewController: UIViewController {
     @objc func editDeleteButtonAction() {
         let popUp = PopUpViewController()
         popUp.modalPresentationStyle = .overCurrentContext
-        popUp.popUpView.viewModel.movieData = viewModel.movieData
+        popUp.viewModel.movieData = viewModel.movieData
         self.present(popUp, animated: true)
+        self.isDelete = true
     }
     
     private let reviewTextView: UITextView = {
@@ -102,6 +104,16 @@ class MovieReviewDetailViewController: UIViewController {
         view.backgroundColor = .systemBackground
         addSubView()
         configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print(isDelete)
+        if isDelete {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        self.isDelete = false
     }
     
     //MARK: - Configure

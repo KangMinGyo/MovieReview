@@ -7,7 +7,6 @@
 import UIKit
 
 class PopUpView: UIView {
-    let viewModel = PopUpViewModel()
     
     //MARK: - Properties
     
@@ -34,7 +33,6 @@ class PopUpView: UIView {
         button.setTitle("수정하기", for: .normal)
         button.layer.cornerRadius = 10
         button.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        button.addTarget(self, action: #selector(editButtonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -46,7 +44,6 @@ class PopUpView: UIView {
         button.setTitle("삭제하기", for: .normal)
         button.layer.cornerRadius = 10
         button.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        button.addTarget(self, action: #selector(deleteButtonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -59,15 +56,6 @@ class PopUpView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    
-    @objc func editButtonAction() {
-        print("수정")
-    }
-    
-    @objc func deleteButtonAction() {
-        print("삭제")
-        viewModel.deleteReview()
-    }
     
     //MARK: - Lifecycle
     

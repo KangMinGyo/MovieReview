@@ -79,7 +79,6 @@ class ReviewWriteViewController: UIViewController {
     
     func fetchPoster() {
         viewModel.getMoviePoster(title: viewModel.searchData!.movieNm) {
-            print("완")
         }
     }
 
