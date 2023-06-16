@@ -23,8 +23,8 @@ class PopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
-        view.layer.opacity = 0.5
+        view.backgroundColor = .clear
+//        view.layer.opacity = 0.5
         print("리뷰: \(viewModel.movieData)")
         addSubView()
     }

@@ -11,6 +11,22 @@ class PopUpView: UIView {
     
     //MARK: - Properties
     
+    let superView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.layer.opacity = 0.5
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let popUpView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.layer.opacity = 1.0
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     lazy var editButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
@@ -68,7 +84,9 @@ class PopUpView: UIView {
     //MARK: - Configure
     
     func addSubView() {
-        self.addSubview(editDeleteButtonStackView)
+        addSubview(superView)
+        addSubview(popUpView)
+        popUpView.addSubview(editDeleteButtonStackView)
 
         configureComponent()
         configureStackView()
@@ -76,8 +94,18 @@ class PopUpView: UIView {
     
     func configureComponent() {
         NSLayoutConstraint.activate([
-            editDeleteButtonStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 20),
-            editDeleteButtonStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            superView.topAnchor.constraint(equalTo: self.topAnchor),
+            superView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            superView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            superView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            popUpView.centerYAnchor.constraint(equalTo: superView.centerYAnchor),
+            popUpView.centerXAnchor.constraint(equalTo: superView.centerXAnchor),
+            popUpView.widthAnchor.constraint(equalToConstant: 200),
+            popUpView.heightAnchor.constraint(equalToConstant: 100),
+            
+            editDeleteButtonStackView.centerYAnchor.constraint(equalTo: popUpView.centerYAnchor, constant: 20),
+            editDeleteButtonStackView.centerXAnchor.constraint(equalTo: popUpView.centerXAnchor),
             editDeleteButtonStackView.widthAnchor.constraint(equalToConstant: 200),
             editDeleteButtonStackView.heightAnchor.constraint(equalToConstant: 100)
         ])
