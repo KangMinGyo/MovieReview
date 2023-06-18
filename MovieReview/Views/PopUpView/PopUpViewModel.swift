@@ -10,6 +10,7 @@ import RealmSwift
 
 class PopUpViewModel {
     var movieData = Review()
+    var index: Int?
     
     func deleteReview() {
         print("삭제: \(movieData.movieName)")

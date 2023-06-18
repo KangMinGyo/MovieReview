@@ -22,6 +22,9 @@ class PopUpViewController: UIViewController {
     
     @objc func editButtonAction() {
         print("수정")
+        let nextVC = ReviewUpdateViewController()
+        nextVC.viewModel.index = viewModel.index
+        self.show(nextVC, sender: self)
     }
     
     @objc func deleteButtonAction() {
@@ -65,4 +68,8 @@ class PopUpViewController: UIViewController {
         popUpView.editButton.addTarget(self, action: #selector(editButtonAction), for: .touchUpInside)
         popUpView.deleteButton.addTarget(self, action: #selector(deleteButtonAction), for: .touchUpInside)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.dismiss(animated: true, completion: nil)
+        }
 }

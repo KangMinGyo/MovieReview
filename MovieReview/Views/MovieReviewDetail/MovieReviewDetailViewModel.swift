@@ -12,13 +12,8 @@ class MovieReviewDetailViewModel {
     var movieData = Review()
     let tag = ["연기", "연출", "OST", "스토리", "영상미"]
     var goodPointValue = String()
-    
-    func deleteReview() {
-        print("삭제: \(movieData.movieName)")
-//        let realm = try! Realm()
-//        realm.delete(movieData)
-    }
-    
+    var index: Int?
+
     func likeHate() -> String {
         if movieData.reviewLikeHate == "Like" {
             return "❤️좋았어요"

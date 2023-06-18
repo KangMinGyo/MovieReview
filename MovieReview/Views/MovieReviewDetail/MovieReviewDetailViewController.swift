@@ -75,6 +75,7 @@ class MovieReviewDetailViewController: UIViewController {
         let popUp = PopUpViewController()
         popUp.modalPresentationStyle = .overCurrentContext
         popUp.viewModel.movieData = viewModel.movieData
+        popUp.viewModel.index = viewModel.index
         self.present(popUp, animated: true)
         self.isDelete = true
     }
@@ -100,7 +101,7 @@ class MovieReviewDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(viewModel.movieData)
         view.backgroundColor = .systemBackground
         addSubView()
         configure()

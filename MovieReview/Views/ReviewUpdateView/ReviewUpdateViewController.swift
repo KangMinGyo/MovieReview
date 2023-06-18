@@ -1,15 +1,15 @@
 //
-//  ReviewWriteView.swift
+//  ReviewEditViewController.swift
 //  MovieReview
 //
-//  Created by KangMingyo on 2023/05/22.
+//  Created by KangMingyo on 2023/06/16.
 //
 
 import UIKit
 
-class ReviewWriteViewController: UIViewController {
+class ReviewUpdateViewController: UIViewController {
     
-    var viewModel = ReviewWriteViewModel()
+    var viewModel = ReviewUpdateViewModel()
     
     //MARK: - Properties
     
@@ -53,7 +53,7 @@ class ReviewWriteViewController: UIViewController {
         viewModel.goodPointValue = goodPointSelectView.goodPointSelected
         viewModel.reviewText = reviewWritingView.reviewTextView.text
         viewModel.setRealmData()
-        self.navigationController?.popToRootViewController(animated: true)
+        self.dismiss(animated: true)
     }
     
     let totalView: UIView = {
@@ -66,20 +66,12 @@ class ReviewWriteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = viewModel.searchData?.movieNm
         reviewWritingView.reviewTextView.delegate = self
         view.backgroundColor = .systemBackground
         
         addSubView()
-        fetchPoster()
         
-        hideKeyboard()
-    }
-    
-    func fetchPoster() {
-        viewModel.getMoviePoster(title: viewModel.searchData!.movieNm) {
-        }
+        self.hideKeyboard()
     }
 
     //MARK: - Configure
@@ -128,7 +120,7 @@ class ReviewWriteViewController: UIViewController {
     }
 }
 
-extension ReviewWriteViewController: UITextViewDelegate {
+extension ReviewUpdateViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if reviewWritingView.reviewTextView.textColor == UIColor.lightGray {
             reviewWritingView.reviewTextView.text = ""

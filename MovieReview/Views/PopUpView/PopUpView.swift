@@ -36,7 +36,7 @@ class PopUpView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
+     
     lazy var deleteButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
@@ -94,7 +94,7 @@ class PopUpView: UIView {
             
             editDeleteButtonStackView.centerYAnchor.constraint(equalTo: popUpView.centerYAnchor, constant: 20),
             editDeleteButtonStackView.centerXAnchor.constraint(equalTo: popUpView.centerXAnchor),
-            editDeleteButtonStackView.widthAnchor.constraint(equalToConstant: 200),
+            editDeleteButtonStackView.widthAnchor.constraint(equalToConstant: 300),
             editDeleteButtonStackView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
