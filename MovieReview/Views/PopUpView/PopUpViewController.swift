@@ -11,6 +11,7 @@ class PopUpViewController: UIViewController {
     
     let viewModel = PopUpViewModel()
     let vc = MovieReviewDetailViewController()
+    var isUpdate = false
     
     //MARK: - Properties
     
@@ -24,7 +25,9 @@ class PopUpViewController: UIViewController {
         print("수정")
         let nextVC = ReviewUpdateViewController()
         nextVC.viewModel.index = viewModel.index
-        self.show(nextVC, sender: self)
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true)
+        isUpdate = true
     }
     
     @objc func deleteButtonAction() {
@@ -39,6 +42,16 @@ class PopUpViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .clear
         addSubView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("isUpdate: \(isUpdate)")
+        if isUpdate {
+            self.dismiss(animated: true)
+//            self.navigationController?.popToRootViewController(animated: true)
+        }
+        self.isUpdate = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {

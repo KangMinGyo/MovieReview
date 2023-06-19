@@ -101,7 +101,6 @@ class MovieReviewDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(viewModel.movieData)
         view.backgroundColor = .systemBackground
         addSubView()
         configure()
@@ -109,8 +108,6 @@ class MovieReviewDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        print(isDelete)
         if isDelete {
             self.navigationController?.popToRootViewController(animated: true)
         }
