@@ -36,7 +36,7 @@ class MovieReviewListViewController: UIViewController {
         return button
     }()
     
-    lazy var BoxOfficeButton: UIBarButtonItem = {
+    lazy var boxOfficeButton: UIBarButtonItem = {
         let button = UIBarButtonItem(image: UIImage(systemName: "chart.bar.xaxis"),
                                      style: .plain,
                                      target: self,
@@ -44,6 +44,15 @@ class MovieReviewListViewController: UIViewController {
         button.tintColor = .gray
         return button
     }()
+    
+    lazy var settingButton: UIBarButtonItem = {
+            let button = UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(settingButtonPressed))
+            button.tintColor = .gray
+            return button
+        }()
     
     @objc func movieSearchButtonPressed() {
         let nextVC = MovieSearchViewController()
@@ -55,13 +64,19 @@ class MovieReviewListViewController: UIViewController {
         self.show(nextVC, sender: self)
     }
     
+    @objc func settingButtonPressed() {
+        let nextVC = SettingView()
+        self.show(nextVC, sender: self)
+    }
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "리뷰 목록"
-        navigationItem.rightBarButtonItems = [BoxOfficeButton, movieSearchButton]
+        navigationItem.leftBarButtonItem = settingButton
+        navigationItem.rightBarButtonItems = [boxOfficeButton, movieSearchButton]
         configureCollectionView()
         configureComponent()
         

@@ -8,6 +8,8 @@
 import UIKit
 
 class LoadingView: UIView {
+    
+    //MARK: - Properties
     private let backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemBackground
@@ -37,6 +39,8 @@ class LoadingView: UIView {
         fatalError()
     }
     
+    //MARK: - Configure
+    
     func configureComponent() {
         self.addSubview(self.backgroundView)
         self.addSubview(self.activityIndicatorView)
@@ -46,8 +50,7 @@ class LoadingView: UIView {
             self.backgroundView.rightAnchor.constraint(equalTo: self.rightAnchor),
             self.backgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             self.backgroundView.topAnchor.constraint(equalTo: self.topAnchor),
-        ])
-        NSLayoutConstraint.activate([
+            
             self.activityIndicatorView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             self.activityIndicatorView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
         ])

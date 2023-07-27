@@ -58,6 +58,7 @@
 		8C71A3F52A2E077D0094A74D /* BoxOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71A3F42A2E077D0094A74D /* BoxOffice.swift */; };
 		8C71A4002A32F4040094A74D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C71A3FF2A32F4040094A74D /* RealmSwift */; };
 		8C71A4072A333AFD0094A74D /* Date+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71A4062A333AFD0094A74D /* Date+Extenstion.swift */; };
+		8CDF86D22A728FC1003B110D /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF86D12A728FC1003B110D /* SettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		8C71A3F22A2E06EA0094A74D /* BoxOfficeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewModel.swift; sourceTree = "<group>"; };
 		8C71A3F42A2E077D0094A74D /* BoxOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOffice.swift; sourceTree = "<group>"; };
 		8C71A4062A333AFD0094A74D /* Date+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extenstion.swift"; sourceTree = "<group>"; };
+		8CDF86D12A728FC1003B110D /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 				8C14605C2A1A13A1005FAED3 /* MovieSearch */,
 				8C1460612A1B40C6005FAED3 /* ReviewWrite */,
 				8C71A3ED2A2DBC790094A74D /* BoxOffice */,
+				8CDF86D02A728F68003B110D /* Setting */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -359,6 +362,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CDF86D02A728F68003B110D /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				8CDF86D12A728FC1003B110D /* SettingView.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,6 +506,7 @@
 				8C313CC32A2624A800A2DAE6 /* ReviewWriteViewModel.swift in Sources */,
 				8C313CCE2A2B67E500A2DAE6 /* UIImageView+Extension.swift in Sources */,
 				8C1460602A1A4516005FAED3 /* MovieSearchTableViewCell.swift in Sources */,
+				8CDF86D22A728FC1003B110D /* SettingView.swift in Sources */,
 				8C14605E2A1A13C1005FAED3 /* MovieSearchViewController.swift in Sources */,
 				8C1460872A1DDC5F005FAED3 /* Review.swift in Sources */,
 				8C14607E2A1CA7D8005FAED3 /* ReviewWritingView.swift in Sources */,
