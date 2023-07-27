@@ -45,11 +45,9 @@ class PopUpViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("isUpdate: \(isUpdate)")
+        super.viewWillAppear(animated) 
         if isUpdate {
             self.dismiss(animated: true)
-//            self.navigationController?.popToRootViewController(animated: true)
         }
         self.isUpdate = false
     }

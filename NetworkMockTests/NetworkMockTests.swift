@@ -12,12 +12,9 @@ final class NetworkMockTests: XCTestCase {
     
     var url: String!
     var data: Data!
-    var title: String!
 
     override func setUpWithError() throws {
-        title = "범죄도시"
-        url = BaseURL.kobis.rawValue + URLPath.searchMovie.rawValue + title
-        url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        url = "https://kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?"
         data = JsonLoader.data(fileName: "SearchDatas")
     }
 
@@ -26,7 +23,7 @@ final class NetworkMockTests: XCTestCase {
         data = nil
     }
 
-    func test_fetchData_Data가_있고_statusCode가_200일때() {
+    func test_fetchData_Data가_있고_statusCode가_200일때_Title을_잘_가져오는가() {
         // given
         let mockURLSession = MockURLSession.make(url: url,
                                                  data: data,

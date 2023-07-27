@@ -13,7 +13,6 @@ class PopUpViewModel {
     var index: Int?
     
     func deleteReview() {
-        print("삭제: \(movieData.movieName)")
         let realm = try! Realm()
         try! realm.write {
             realm.delete(movieData)

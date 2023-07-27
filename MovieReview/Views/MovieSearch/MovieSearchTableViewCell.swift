@@ -73,7 +73,7 @@ class MovieSearchTableViewCell: UITableViewCell {
     
     func setup(with data: MovieList) {
         movieNameLabel.text = data.movieNm
-        directorLabel.text = data.directors.first?.peopleNm
+        directorLabel.text = data.directors.first?.peopleNm ?? "-"
         movieInfoLabel.text = data.movieInfo
     }
 }
