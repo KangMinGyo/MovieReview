@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingView: UIViewController {
+class SettingViewController: UIViewController {
     
     //MARK: - Properties
     

@@ -65,7 +65,7 @@ class MovieReviewListViewController: UIViewController {
     }
     
     @objc func settingButtonPressed() {
-        let nextVC = SettingView()
+        let nextVC = SettingViewController()
         self.show(nextVC, sender: self)
     }
     

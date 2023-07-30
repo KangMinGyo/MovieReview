@@ -58,7 +58,9 @@
 		8C71A3F52A2E077D0094A74D /* BoxOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71A3F42A2E077D0094A74D /* BoxOffice.swift */; };
 		8C71A4002A32F4040094A74D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C71A3FF2A32F4040094A74D /* RealmSwift */; };
 		8C71A4072A333AFD0094A74D /* Date+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71A4062A333AFD0094A74D /* Date+Extenstion.swift */; };
-		8CDF86D22A728FC1003B110D /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF86D12A728FC1003B110D /* SettingView.swift */; };
+		8CDF86D22A728FC1003B110D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF86D12A728FC1003B110D /* SettingViewController.swift */; };
+		8CDF86D42A76762B003B110D /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF86D32A76762B003B110D /* SettingViewModel.swift */; };
+		8CDF86D62A76772D003B110D /* MessageUI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF86D52A76772D003B110D /* MessageUI+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,7 +124,9 @@
 		8C71A3F22A2E06EA0094A74D /* BoxOfficeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewModel.swift; sourceTree = "<group>"; };
 		8C71A3F42A2E077D0094A74D /* BoxOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOffice.swift; sourceTree = "<group>"; };
 		8C71A4062A333AFD0094A74D /* Date+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extenstion.swift"; sourceTree = "<group>"; };
-		8CDF86D12A728FC1003B110D /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		8CDF86D12A728FC1003B110D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		8CDF86D32A76762B003B110D /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		8CDF86D52A76772D003B110D /* MessageUI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageUI+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +236,7 @@
 				8C71A4062A333AFD0094A74D /* Date+Extenstion.swift */,
 				8C5F1FCA2A34AE1000D4134C /* String+Extension.swift */,
 				8C5F1FDC2A3CB21300D4134C /* UIViewController+Extension.swift */,
+				8CDF86D52A76772D003B110D /* MessageUI+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -367,7 +372,8 @@
 		8CDF86D02A728F68003B110D /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				8CDF86D12A728FC1003B110D /* SettingView.swift */,
+				8CDF86D12A728FC1003B110D /* SettingViewController.swift */,
+				8CDF86D32A76762B003B110D /* SettingViewModel.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -496,17 +502,19 @@
 				8C313CC52A29D48000A2DAE6 /* MovieReviewListViewModel.swift in Sources */,
 				8C1460452A0E9B0F005FAED3 /* MovieReviewListViewController.swift in Sources */,
 				8C5F1FCF2A36FC7800D4134C /* Repository.swift in Sources */,
+				8CDF86D62A76772D003B110D /* MessageUI+Extension.swift in Sources */,
 				8C14607A2A1BAEC1005FAED3 /* LikeHateSelectView.swift in Sources */,
 				8C1460412A0E9B0F005FAED3 /* AppDelegate.swift in Sources */,
 				8C71A3F12A2DBD000094A74D /* BoxOfficeCollectionViewCell.swift in Sources */,
 				8C71A4072A333AFD0094A74D /* Date+Extenstion.swift in Sources */,
+				8CDF86D42A76762B003B110D /* SettingViewModel.swift in Sources */,
 				8C14605B2A19EF27005FAED3 /* MovieReviewDetailViewController.swift in Sources */,
 				8C5F1FD62A3B604500D4134C /* PopUpViewModel.swift in Sources */,
 				8C71A3F32A2E06EA0094A74D /* BoxOfficeViewModel.swift in Sources */,
 				8C313CC32A2624A800A2DAE6 /* ReviewWriteViewModel.swift in Sources */,
 				8C313CCE2A2B67E500A2DAE6 /* UIImageView+Extension.swift in Sources */,
 				8C1460602A1A4516005FAED3 /* MovieSearchTableViewCell.swift in Sources */,
-				8CDF86D22A728FC1003B110D /* SettingView.swift in Sources */,
+				8CDF86D22A728FC1003B110D /* SettingViewController.swift in Sources */,
 				8C14605E2A1A13C1005FAED3 /* MovieSearchViewController.swift in Sources */,
 				8C1460872A1DDC5F005FAED3 /* Review.swift in Sources */,
 				8C14607E2A1CA7D8005FAED3 /* ReviewWritingView.swift in Sources */,
