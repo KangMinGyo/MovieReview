@@ -18,15 +18,20 @@ class SettingViewController: UIViewController {
         return view
     }()
     
-    let askButton: UIButton = {
+    lazy var feedbackButton: UIButton = {
         let button = UIButton(type: UIButton.ButtonType.system)
         button.setTitle("피드백", for: .normal)
         button.contentHorizontalAlignment = .leading
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         button.tintColor = .gray
+        button.addTarget(self, action: #selector(feedbackButtonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    @objc func feedbackButtonAction() {
+        sendMail()
+    }
     
     let buttomLineView: UIView = {
         let view = UIView()
@@ -48,7 +53,7 @@ class SettingViewController: UIViewController {
     
     func configureComponent() {
         view.addSubview(topLineView)
-        view.addSubview(askButton)
+        view.addSubview(feedbackButton)
         view.addSubview(buttomLineView)
         
         NSLayoutConstraint.activate([
@@ -57,11 +62,11 @@ class SettingViewController: UIViewController {
             topLineView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             topLineView.heightAnchor.constraint(equalToConstant: 1),
             
-            askButton.topAnchor.constraint(equalTo: topLineView.bottomAnchor, constant: 10),
-            askButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            askButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            feedbackButton.topAnchor.constraint(equalTo: topLineView.bottomAnchor, constant: 10),
+            feedbackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            feedbackButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            buttomLineView.topAnchor.constraint(equalTo: askButton.bottomAnchor, constant: 10),
+            buttomLineView.topAnchor.constraint(equalTo: feedbackButton.bottomAnchor, constant: 10),
             buttomLineView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             buttomLineView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             buttomLineView.heightAnchor.constraint(equalToConstant: 1),

@@ -59,7 +59,6 @@
 		8C71A4002A32F4040094A74D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C71A3FF2A32F4040094A74D /* RealmSwift */; };
 		8C71A4072A333AFD0094A74D /* Date+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C71A4062A333AFD0094A74D /* Date+Extenstion.swift */; };
 		8CDF86D22A728FC1003B110D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF86D12A728FC1003B110D /* SettingViewController.swift */; };
-		8CDF86D42A76762B003B110D /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF86D32A76762B003B110D /* SettingViewModel.swift */; };
 		8CDF86D62A76772D003B110D /* MessageUI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF86D52A76772D003B110D /* MessageUI+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -125,7 +124,6 @@
 		8C71A3F42A2E077D0094A74D /* BoxOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOffice.swift; sourceTree = "<group>"; };
 		8C71A4062A333AFD0094A74D /* Date+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extenstion.swift"; sourceTree = "<group>"; };
 		8CDF86D12A728FC1003B110D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		8CDF86D32A76762B003B110D /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		8CDF86D52A76772D003B110D /* MessageUI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageUI+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -373,7 +371,6 @@
 			isa = PBXGroup;
 			children = (
 				8CDF86D12A728FC1003B110D /* SettingViewController.swift */,
-				8CDF86D32A76762B003B110D /* SettingViewModel.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -507,7 +504,6 @@
 				8C1460412A0E9B0F005FAED3 /* AppDelegate.swift in Sources */,
 				8C71A3F12A2DBD000094A74D /* BoxOfficeCollectionViewCell.swift in Sources */,
 				8C71A4072A333AFD0094A74D /* Date+Extenstion.swift in Sources */,
-				8CDF86D42A76762B003B110D /* SettingViewModel.swift in Sources */,
 				8C14605B2A19EF27005FAED3 /* MovieReviewDetailViewController.swift in Sources */,
 				8C5F1FD62A3B604500D4134C /* PopUpViewModel.swift in Sources */,
 				8C71A3F32A2E06EA0094A74D /* BoxOfficeViewModel.swift in Sources */,
