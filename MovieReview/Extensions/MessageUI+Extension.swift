@@ -53,7 +53,7 @@ extension SettingViewController: MFMailComposeViewControllerDelegate {
         }
     }
     
-    // Device Identifier 찾기
+    //Device Identifier 찾기
     func getDeviceIdentifier() -> String {
         var systemInfo = utsname()
         uname(&systemInfo)
@@ -65,10 +65,10 @@ extension SettingViewController: MFMailComposeViewControllerDelegate {
         return identifier
     }
     
-    // 현재 버전 가져오기
+    //현재 버전 가져오기
     func getCurrentVersion() -> String {
         guard let dictionary = Bundle.main.infoDictionary,
-              let version = dictionary["CFBundleShortVersionString"] as? String else { return "" }
+              let version = dictionary["CFBundleShortVersionString"] as? String else { return }
         return version
     }
 }
