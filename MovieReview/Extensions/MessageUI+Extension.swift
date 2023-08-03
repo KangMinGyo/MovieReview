@@ -68,7 +68,7 @@ extension SettingViewController: MFMailComposeViewControllerDelegate {
     //현재 버전 가져오기
     func getCurrentVersion() -> String {
         guard let dictionary = Bundle.main.infoDictionary,
-              let version = dictionary["CFBundleShortVersionString"] as? String else { return }
+              let version = dictionary["CFBundleShortVersionString"] as? String else { return "" }
         return version
     }
 }
