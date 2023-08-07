@@ -144,6 +144,8 @@ class MovieReviewDetailViewController: UIViewController {
     func configureComponent() {
         NSLayoutConstraint.activate([
             movieNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            movieNameLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            movieNameLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             movieNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             dateLabel.topAnchor.constraint(equalTo: movieNameLabel.bottomAnchor, constant: 10),
