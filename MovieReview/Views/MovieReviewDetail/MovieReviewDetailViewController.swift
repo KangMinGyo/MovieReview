@@ -6,17 +6,18 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MovieReviewDetailViewController: UIViewController {
     
     let viewModel = MovieReviewDetailViewModel()
-    var isDelete = false
     
     //MARK: - Properties
     
     private let movieNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 25)
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -73,11 +74,10 @@ class MovieReviewDetailViewController: UIViewController {
     
     @objc func editDeleteButtonAction() {
         let popUp = PopUpViewController()
-        popUp.modalPresentationStyle = .overCurrentContext
+        popUp.modalPresentationStyle = .fullScreen
         popUp.viewModel.movieData = viewModel.movieData
         popUp.viewModel.index = viewModel.index
         self.present(popUp, animated: true)
-        self.isDelete = true
     }
     
     private let reviewTextView: UITextView = {
@@ -108,12 +108,8 @@ class MovieReviewDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if isDelete {
-            self.navigationController?.popToRootViewController(animated: true)
-        }
-        self.isDelete = false
     }
-    
+
     //MARK: - Configure
     
     func configure() {

@@ -45,11 +45,14 @@ class PopUpViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated) 
+        super.viewWillAppear(animated)
+        print("pop view wiil")
         if isUpdate {
+            //PopUpView Dismiss
             self.dismiss(animated: true)
+            print("---Dismiss---")
+            self.isUpdate = false
         }
-        self.isUpdate = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {

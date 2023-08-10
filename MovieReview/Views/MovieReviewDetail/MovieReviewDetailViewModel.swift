@@ -10,6 +10,7 @@ import RealmSwift
 
 class MovieReviewDetailViewModel {
     var movieData = Review()
+    
     let tag = ["연기", "연출", "OST", "스토리", "영상미"]
     var goodPointValue = String()
     var index: Int?
