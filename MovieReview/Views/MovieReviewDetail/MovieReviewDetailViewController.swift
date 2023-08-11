@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class MovieReviewDetailViewController: UIViewController {
     
@@ -67,17 +66,19 @@ class MovieReviewDetailViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(systemName: "trash.fill"), for: .normal)
         button.tintColor = .systemGray2
-        button.addTarget(self, action: #selector(editDeleteButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(deleteButtonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    @objc func editDeleteButtonAction() {
-        let popUp = PopUpViewController()
-        popUp.modalPresentationStyle = .fullScreen
-        popUp.viewModel.movieData = viewModel.movieData
-        popUp.viewModel.index = viewModel.index
-        self.present(popUp, animated: true)
+    @objc func deleteButtonAction() {
+        let sheet = UIAlertController(title: "경고", message: "정말 삭제하시겠습니까?", preferredStyle: .alert)
+        sheet.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
+            self.viewModel.deleteReview()
+            self.navigationController?.popToRootViewController(animated: true)
+        }))
+        sheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { _ in print("취소") }))
+        present(sheet, animated: true)
     }
     
     private let reviewTextView: UITextView = {
@@ -104,10 +105,6 @@ class MovieReviewDetailViewController: UIViewController {
         view.backgroundColor = .systemBackground
         addSubView()
         configure()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
 
     //MARK: - Configure
